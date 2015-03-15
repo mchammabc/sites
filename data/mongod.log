@@ -1,0 +1,209 @@
+2015-02-15T21:06:12.753-0600 ***** SERVER RESTARTED *****
+2015-02-15T21:06:12.757-0600 [initandlisten] MongoDB starting : pid=3411 port=27017 dbpath=/Users/home/Sites/data/db 64-bit host=Mahers-MacBook-Pro.local
+2015-02-15T21:06:12.757-0600 [initandlisten] 
+2015-02-15T21:06:12.757-0600 [initandlisten] ** WARNING: soft rlimits too low. Number of files is 256, should be at least 1000
+2015-02-15T21:06:12.757-0600 [initandlisten] db version v2.6.7
+2015-02-15T21:06:12.757-0600 [initandlisten] git version: a7d57ad27c382de82e9cb93bf983a80fd9ac9899
+2015-02-15T21:06:12.757-0600 [initandlisten] build info: Darwin bs-osx-108-x86-64-2.10gen.cc 12.3.0 Darwin Kernel Version 12.3.0: Sun Jan  6 22:37:10 PST 2013; root:xnu-2050.22.13~1/RELEASE_X86_64 x86_64 BOOST_LIB_VERSION=1_49
+2015-02-15T21:06:12.757-0600 [initandlisten] allocator: system
+2015-02-15T21:06:12.758-0600 [initandlisten] options: { config: "/Users/home/Sites/mongodb.conf", net: { bindIp: "127.0.0.1", port: 27017 }, storage: { dbPath: "/Users/home/Sites/data/db", journal: { enabled: true } }, systemLog: { destination: "file", logAppend: true, path: "/Users/home/sites/data/mongod.log", quiet: true } }
+2015-02-15T21:06:12.822-0600 [initandlisten] journal dir=/Users/home/Sites/data/db/journal
+2015-02-15T21:06:12.822-0600 [initandlisten] recover : no journal files present, no recovery needed
+2015-02-15T21:06:12.838-0600 [initandlisten] allocating new ns file /Users/home/Sites/data/db/local.ns, filling with zeroes...
+2015-02-15T21:06:13.482-0600 [FileAllocator] allocating new datafile /Users/home/Sites/data/db/local.0, filling with zeroes...
+2015-02-15T21:06:13.482-0600 [FileAllocator] creating directory /Users/home/Sites/data/db/_tmp
+2015-02-15T21:06:14.273-0600 [FileAllocator] done allocating datafile /Users/home/Sites/data/db/local.0, size: 64MB,  took 0.79 secs
+2015-02-15T21:06:14.585-0600 [initandlisten] build index on: local.startup_log properties: { v: 1, key: { _id: 1 }, name: "_id_", ns: "local.startup_log" }
+2015-02-15T21:06:14.685-0600 [initandlisten] 	 added index to empty collection
+2015-02-15T21:06:14.685-0600 [initandlisten] command local.$cmd command: create { create: "startup_log", size: 10485760, capped: true } ntoreturn:1 keyUpdates:0 numYields:0  reslen:37 1847ms
+2015-02-15T21:06:14.686-0600 [initandlisten] waiting for connections on port 27017
+2015-02-15T21:07:13.444-0600 ***** SERVER RESTARTED *****
+2015-02-15T21:07:13.448-0600 [initandlisten] MongoDB starting : pid=3770 port=27017 dbpath=/Users/home/Sites/data/db 64-bit host=Mahers-MacBook-Pro.local
+2015-02-15T21:07:13.448-0600 [initandlisten] 
+2015-02-15T21:07:13.448-0600 [initandlisten] ** WARNING: soft rlimits too low. Number of files is 256, should be at least 1000
+2015-02-15T21:07:13.448-0600 [initandlisten] db version v2.6.7
+2015-02-15T21:07:13.449-0600 [initandlisten] git version: a7d57ad27c382de82e9cb93bf983a80fd9ac9899
+2015-02-15T21:07:13.449-0600 [initandlisten] build info: Darwin bs-osx-108-x86-64-2.10gen.cc 12.3.0 Darwin Kernel Version 12.3.0: Sun Jan  6 22:37:10 PST 2013; root:xnu-2050.22.13~1/RELEASE_X86_64 x86_64 BOOST_LIB_VERSION=1_49
+2015-02-15T21:07:13.449-0600 [initandlisten] allocator: system
+2015-02-15T21:07:13.449-0600 [initandlisten] options: { config: "/USers/home/Sites/mongodb.conf", net: { bindIp: "127.0.0.1", port: 27017 }, storage: { dbPath: "/Users/home/Sites/data/db", journal: { enabled: true } }, systemLog: { destination: "file", logAppend: true, path: "/Users/home/sites/data/mongod.log", quiet: true } }
+2015-02-15T21:07:13.482-0600 [initandlisten] exception in initAndListen: 10310 Unable to lock file: /Users/home/Sites/data/db/mongod.lock. Is a mongod instance already running?, terminating
+2015-02-15T21:07:13.483-0600 [initandlisten] dbexit: 
+2015-02-15T21:07:13.483-0600 [initandlisten] shutdown: going to close listening sockets...
+2015-02-15T21:07:13.483-0600 [initandlisten] shutdown: going to flush diaglog...
+2015-02-15T21:07:13.483-0600 [initandlisten] shutdown: going to close sockets...
+2015-02-15T21:07:13.483-0600 [initandlisten] shutdown: waiting for fs preallocator...
+2015-02-15T21:07:13.483-0600 [initandlisten] shutdown: lock for final commit...
+2015-02-15T21:07:13.483-0600 [initandlisten] shutdown: final commit...
+2015-02-15T21:07:13.483-0600 [initandlisten] shutdown: closing all files...
+2015-02-15T21:07:13.484-0600 [initandlisten] closeAllFiles() finished
+2015-02-15T21:07:13.484-0600 [initandlisten] dbexit: really exiting now
+2015-02-15T21:07:40.796-0600 ***** SERVER RESTARTED *****
+2015-02-15T21:07:40.800-0600 [initandlisten] MongoDB starting : pid=3933 port=27017 dbpath=/Users/home/Sites/data/db 64-bit host=Mahers-MacBook-Pro.local
+2015-02-15T21:07:40.800-0600 [initandlisten] 
+2015-02-15T21:07:40.800-0600 [initandlisten] ** WARNING: soft rlimits too low. Number of files is 256, should be at least 1000
+2015-02-15T21:07:40.800-0600 [initandlisten] db version v2.6.7
+2015-02-15T21:07:40.800-0600 [initandlisten] git version: a7d57ad27c382de82e9cb93bf983a80fd9ac9899
+2015-02-15T21:07:40.800-0600 [initandlisten] build info: Darwin bs-osx-108-x86-64-2.10gen.cc 12.3.0 Darwin Kernel Version 12.3.0: Sun Jan  6 22:37:10 PST 2013; root:xnu-2050.22.13~1/RELEASE_X86_64 x86_64 BOOST_LIB_VERSION=1_49
+2015-02-15T21:07:40.800-0600 [initandlisten] allocator: system
+2015-02-15T21:07:40.800-0600 [initandlisten] options: { config: "/Users/home/Sites/mongodb.conf", net: { bindIp: "127.0.0.1", port: 27017 }, storage: { dbPath: "/Users/home/Sites/data/db", journal: { enabled: true } }, systemLog: { destination: "file", logAppend: true, path: "/Users/home/sites/data/mongod.log", quiet: true } }
+2015-02-15T21:07:40.800-0600 [initandlisten] exception in initAndListen: 10310 Unable to lock file: /Users/home/Sites/data/db/mongod.lock. Is a mongod instance already running?, terminating
+2015-02-15T21:07:40.801-0600 [initandlisten] dbexit: 
+2015-02-15T21:07:40.801-0600 [initandlisten] shutdown: going to close listening sockets...
+2015-02-15T21:07:40.801-0600 [initandlisten] shutdown: going to flush diaglog...
+2015-02-15T21:07:40.801-0600 [initandlisten] shutdown: going to close sockets...
+2015-02-15T21:07:40.801-0600 [initandlisten] shutdown: waiting for fs preallocator...
+2015-02-15T21:07:40.801-0600 [initandlisten] shutdown: lock for final commit...
+2015-02-15T21:07:40.801-0600 [initandlisten] shutdown: final commit...
+2015-02-15T21:07:40.801-0600 [initandlisten] shutdown: closing all files...
+2015-02-15T21:07:40.801-0600 [initandlisten] closeAllFiles() finished
+2015-02-15T21:07:40.801-0600 [initandlisten] dbexit: really exiting now
+2015-02-15T21:23:09.061-0600 [signalProcessingThread] got signal 15 (Terminated: 15), will terminate after current cmd ends
+2015-02-15T21:23:09.061-0600 [signalProcessingThread] now exiting
+2015-02-15T21:23:09.061-0600 [signalProcessingThread] dbexit: 
+2015-02-15T21:23:09.061-0600 [signalProcessingThread] shutdown: going to close listening sockets...
+2015-02-15T21:23:09.061-0600 [signalProcessingThread] closing listening socket: 8
+2015-02-15T21:23:09.061-0600 [signalProcessingThread] closing listening socket: 9
+2015-02-15T21:23:09.061-0600 [signalProcessingThread] removing socket file: /tmp/mongodb-27017.sock
+2015-02-15T21:23:09.061-0600 [signalProcessingThread] shutdown: going to flush diaglog...
+2015-02-15T21:23:09.061-0600 [signalProcessingThread] shutdown: going to close sockets...
+2015-02-15T21:23:09.061-0600 [signalProcessingThread] shutdown: waiting for fs preallocator...
+2015-02-15T21:23:09.061-0600 [signalProcessingThread] shutdown: lock for final commit...
+2015-02-15T21:23:09.061-0600 [signalProcessingThread] shutdown: final commit...
+2015-02-15T21:23:09.065-0600 [signalProcessingThread] shutdown: closing all files...
+2015-02-15T21:23:09.065-0600 [signalProcessingThread] closeAllFiles() finished
+2015-02-15T21:23:09.065-0600 [signalProcessingThread] journalCleanup...
+2015-02-15T21:23:09.065-0600 [signalProcessingThread] removeJournalFiles
+2015-02-15T21:23:09.065-0600 [signalProcessingThread] shutdown: removing fs lock...
+2015-02-15T21:23:09.065-0600 [signalProcessingThread] dbexit: really exiting now
+2015-02-15T21:25:23.548-0600 ***** SERVER RESTARTED *****
+2015-02-15T21:25:24.199-0600 [initandlisten] MongoDB starting : pid=404 port=27017 dbpath=/Users/home/Sites/data/db 64-bit host=Mahers-MacBook-Pro.local
+2015-02-15T21:25:24.199-0600 [initandlisten] 
+2015-02-15T21:25:24.199-0600 [initandlisten] ** WARNING: soft rlimits too low. Number of files is 256, should be at least 1000
+2015-02-15T21:25:24.199-0600 [initandlisten] db version v2.6.7
+2015-02-15T21:25:24.199-0600 [initandlisten] git version: a7d57ad27c382de82e9cb93bf983a80fd9ac9899
+2015-02-15T21:25:24.199-0600 [initandlisten] build info: Darwin bs-osx-108-x86-64-2.10gen.cc 12.3.0 Darwin Kernel Version 12.3.0: Sun Jan  6 22:37:10 PST 2013; root:xnu-2050.22.13~1/RELEASE_X86_64 x86_64 BOOST_LIB_VERSION=1_49
+2015-02-15T21:25:24.199-0600 [initandlisten] allocator: system
+2015-02-15T21:25:24.199-0600 [initandlisten] options: { config: "/Users/home/Sites/mongodb.conf", net: { bindIp: "127.0.0.1", port: 27017 }, storage: { dbPath: "/Users/home/Sites/data/db", journal: { enabled: true } }, systemLog: { destination: "file", logAppend: true, path: "/Users/home/sites/data/mongod.log", quiet: true } }
+2015-02-15T21:25:24.268-0600 [initandlisten] journal dir=/Users/home/Sites/data/db/journal
+2015-02-15T21:25:24.269-0600 [initandlisten] recover : no journal files present, no recovery needed
+2015-02-15T21:25:26.243-0600 [initandlisten] waiting for connections on port 27017
+2015-02-15T21:26:51.265-0600 [conn4] allocating new ns file /Users/home/Sites/data/db/meantest-dev.ns, filling with zeroes...
+2015-02-15T21:26:52.413-0600 [FileAllocator] allocating new datafile /Users/home/Sites/data/db/meantest-dev.0, filling with zeroes...
+2015-02-15T21:26:52.413-0600 [FileAllocator] creating directory /Users/home/Sites/data/db/_tmp
+2015-02-15T21:26:54.732-0600 [FileAllocator] done allocating datafile /Users/home/Sites/data/db/meantest-dev.0, size: 64MB,  took 2.18 secs
+2015-02-15T21:26:55.145-0600 [conn4] ExtentManager took 2 seconds to open: /Users/home/Sites/data/db/meantest-dev.0
+2015-02-15T21:26:55.146-0600 [conn4] build index on: meantest-dev.users properties: { v: 1, key: { _id: 1 }, name: "_id_", ns: "meantest-dev.users" }
+2015-02-15T21:26:55.146-0600 [conn4] 	 added index to empty collection
+2015-02-15T21:26:55.147-0600 [conn4] build index on: meantest-dev.users properties: { v: 1, unique: true, key: { username: 1 }, name: "username_1", ns: "meantest-dev.users", background: true, safe: null }
+2015-02-15T21:26:55.147-0600 [conn4] 	 added index to empty collection
+2015-02-15T21:26:55.147-0600 [conn4] command meantest-dev.$cmd command: createIndexes { createIndexes: "users", indexes: [ { name: "username_1", key: { username: 1 }, unique: "testing error message", background: true, safe: null } ] } keyUpdates:0 numYields:0 locks(micros) r:5 w:3882150 reslen:113 3882ms
+2015-02-15T21:26:57.706-0600 [conn2] build index on: meantest-dev.sessions properties: { v: 1, key: { _id: 1 }, name: "_id_", ns: "meantest-dev.sessions" }
+2015-02-15T21:26:57.707-0600 [conn2] 	 added index to empty collection
+2015-02-15T21:26:57.707-0600 [conn2] build index on: meantest-dev.sessions properties: { v: 1, key: { expires: 1 }, name: "expires_1", ns: "meantest-dev.sessions", expireAfterSeconds: 0 }
+2015-02-15T21:26:57.708-0600 [conn2] 	 added index to empty collection
+2015-02-15T21:29:49.287-0600 [signalProcessingThread] got signal 15 (Terminated: 15), will terminate after current cmd ends
+2015-02-15T21:29:49.287-0600 [signalProcessingThread] now exiting
+2015-02-15T21:29:49.287-0600 [signalProcessingThread] dbexit: 
+2015-02-15T21:29:49.287-0600 [signalProcessingThread] shutdown: going to close listening sockets...
+2015-02-15T21:29:49.287-0600 [signalProcessingThread] closing listening socket: 8
+2015-02-15T21:29:49.287-0600 [signalProcessingThread] closing listening socket: 9
+2015-02-15T21:29:49.287-0600 [signalProcessingThread] removing socket file: /tmp/mongodb-27017.sock
+2015-02-15T21:29:49.287-0600 [signalProcessingThread] shutdown: going to flush diaglog...
+2015-02-15T21:29:49.287-0600 [signalProcessingThread] shutdown: going to close sockets...
+2015-02-15T21:29:49.288-0600 [signalProcessingThread] shutdown: waiting for fs preallocator...
+2015-02-15T21:29:49.288-0600 [signalProcessingThread] shutdown: lock for final commit...
+2015-02-15T21:29:49.288-0600 [signalProcessingThread] shutdown: final commit...
+2015-02-15T21:29:49.291-0600 [signalProcessingThread] shutdown: closing all files...
+2015-02-15T21:29:49.291-0600 [signalProcessingThread] closeAllFiles() finished
+2015-02-15T21:29:49.291-0600 [signalProcessingThread] journalCleanup...
+2015-02-15T21:29:49.291-0600 [signalProcessingThread] removeJournalFiles
+2015-02-15T21:29:49.291-0600 [signalProcessingThread] shutdown: removing fs lock...
+2015-02-15T21:29:49.291-0600 [signalProcessingThread] dbexit: really exiting now
+2015-02-15T21:30:16.510-0600 ***** SERVER RESTARTED *****
+2015-02-15T21:30:16.513-0600 [initandlisten] MongoDB starting : pid=1154 port=27017 dbpath=/Users/home/Sites/data/db 64-bit host=Mahers-MacBook-Pro.local
+2015-02-15T21:30:16.514-0600 [initandlisten] 
+2015-02-15T21:30:16.514-0600 [initandlisten] ** WARNING: soft rlimits too low. Number of files is 256, should be at least 1000
+2015-02-15T21:30:16.514-0600 [initandlisten] db version v2.6.7
+2015-02-15T21:30:16.514-0600 [initandlisten] git version: a7d57ad27c382de82e9cb93bf983a80fd9ac9899
+2015-02-15T21:30:16.514-0600 [initandlisten] build info: Darwin bs-osx-108-x86-64-2.10gen.cc 12.3.0 Darwin Kernel Version 12.3.0: Sun Jan  6 22:37:10 PST 2013; root:xnu-2050.22.13~1/RELEASE_X86_64 x86_64 BOOST_LIB_VERSION=1_49
+2015-02-15T21:30:16.514-0600 [initandlisten] allocator: system
+2015-02-15T21:30:16.514-0600 [initandlisten] options: { config: "/Users/home/Sites/mongodb.conf", net: { bindIp: "127.0.0.1", port: 27017 }, storage: { dbPath: "/Users/home/Sites/data/db", journal: { enabled: true } }, systemLog: { destination: "file", logAppend: true, path: "/Users/home/sites/data/mongod.log", quiet: true } }
+2015-02-15T21:30:16.515-0600 [initandlisten] journal dir=/Users/home/Sites/data/db/journal
+2015-02-15T21:30:16.515-0600 [initandlisten] recover : no journal files present, no recovery needed
+2015-02-15T21:30:16.989-0600 [initandlisten] waiting for connections on port 27017
+2015-02-22T07:46:44.003-0600 [DataFileSync] flushing mmaps took 29912208ms  for 5 files
+2015-02-22T08:55:37.023-0600 [conn11] build index on: meantest-dev.articles properties: { v: 1, key: { _id: 1 }, name: "_id_", ns: "meantest-dev.articles" }
+2015-02-22T08:55:37.024-0600 [conn11] 	 added index to empty collection
+2015-02-22T09:35:07.500-0600 [conn13] update meantest-dev.sessions query: { _id: "vT9i7J0E-pIm1FfMCc8wlsNiOe0RyDBP" } update: { _id: "vT9i7J0E-pIm1FfMCc8wlsNiOe0RyDBP", session: "{"cookie":{"originalMaxAge":null,"expires":null,"httpOnly":true,"path":"/"},"passport":{"user":"54e9e0ce2a0889b0aa512432"}}", expires: new Date(1425828907331) } nMatched:1 nModified:1 keyUpdates:1 numYields:0 locks(micros) w:95 168ms
+2015-02-22T09:35:07.500-0600 [conn13] command meantest-dev.$cmd command: update { update: "sessions", writeConcern: { w: 1 }, ordered: true, updates: [ { q: { _id: "vT9i7J0E-pIm1FfMCc8wlsNiOe0RyDBP" }, u: { _id: "vT9i7J0E-pIm1FfMCc8wlsNiOe0RyDBP", session: "{"cookie":{"originalMaxAge":null,"expires":null,"httpOnly":true,"path":"/"},"passport":{"user":"54e9e0ce2a0889b0aa512432"}}", expires: new Date(1425828907331) }, multi: false, upsert: true } ] } keyUpdates:0 numYields:0  reslen:55 168ms
+2015-02-22T10:05:37.999-0600 [conn37] update meantest-dev.sessions query: { _id: "sL1CdK0xoUtsWnVT3VZonrMX6DXo1FwS" } update: { _id: "sL1CdK0xoUtsWnVT3VZonrMX6DXo1FwS", session: "{"cookie":{"originalMaxAge":null,"expires":null,"httpOnly":true,"path":"/"},"passport":{}}", expires: new Date(1425830737827) } nMatched:1 nModified:1 keyUpdates:1 numYields:0 locks(micros) w:69 171ms
+2015-02-22T10:05:38.000-0600 [conn37] command meantest-dev.$cmd command: update { update: "sessions", writeConcern: { w: 1 }, ordered: true, updates: [ { q: { _id: "sL1CdK0xoUtsWnVT3VZonrMX6DXo1FwS" }, u: { _id: "sL1CdK0xoUtsWnVT3VZonrMX6DXo1FwS", session: "{"cookie":{"originalMaxAge":null,"expires":null,"httpOnly":true,"path":"/"},"passport":{}}", expires: new Date(1425830737827) }, multi: false, upsert: true } ] } keyUpdates:0 numYields:0  reslen:55 172ms
+2015-02-22T10:05:38.269-0600 [conn40] update meantest-dev.sessions query: { _id: "sL1CdK0xoUtsWnVT3VZonrMX6DXo1FwS" } update: { _id: "sL1CdK0xoUtsWnVT3VZonrMX6DXo1FwS", session: "{"cookie":{"originalMaxAge":null,"expires":null,"httpOnly":true,"path":"/"},"passport":{}}", expires: new Date(1425830738128) } nMatched:1 nModified:1 keyUpdates:1 numYields:0 locks(micros) w:70 140ms
+2015-02-22T10:05:38.269-0600 [conn39] update meantest-dev.sessions query: { _id: "sL1CdK0xoUtsWnVT3VZonrMX6DXo1FwS" } update: { _id: "sL1CdK0xoUtsWnVT3VZonrMX6DXo1FwS", session: "{"cookie":{"originalMaxAge":null,"expires":null,"httpOnly":true,"path":"/"},"passport":{}}", expires: new Date(1425830738129) } nMatched:1 nModified:1 keyUpdates:1 numYields:0 locks(micros) w:75 139ms
+2015-02-22T10:05:38.269-0600 [conn38] update meantest-dev.sessions query: { _id: "sL1CdK0xoUtsWnVT3VZonrMX6DXo1FwS" } update: { _id: "sL1CdK0xoUtsWnVT3VZonrMX6DXo1FwS", session: "{"cookie":{"originalMaxAge":null,"expires":null,"httpOnly":true,"path":"/"},"passport":{}}", expires: new Date(1425830738132) } nMatched:1 nModified:1 keyUpdates:1 numYields:0 locks(micros) w:93 136ms
+2015-02-22T10:05:38.269-0600 [conn37] update meantest-dev.sessions query: { _id: "sL1CdK0xoUtsWnVT3VZonrMX6DXo1FwS" } update: { _id: "sL1CdK0xoUtsWnVT3VZonrMX6DXo1FwS", session: "{"cookie":{"originalMaxAge":null,"expires":null,"httpOnly":true,"path":"/"},"passport":{}}", expires: new Date(1425830738151) } nMatched:1 nModified:1 keyUpdates:1 numYields:0 locks(micros) w:97 118ms
+2015-02-22T10:05:38.270-0600 [conn40] command meantest-dev.$cmd command: update { update: "sessions", writeConcern: { w: 1 }, ordered: true, updates: [ { q: { _id: "sL1CdK0xoUtsWnVT3VZonrMX6DXo1FwS" }, u: { _id: "sL1CdK0xoUtsWnVT3VZonrMX6DXo1FwS", session: "{"cookie":{"originalMaxAge":null,"expires":null,"httpOnly":true,"path":"/"},"passport":{}}", expires: new Date(1425830738128) }, multi: false, upsert: true } ] } keyUpdates:0 numYields:0  reslen:55 141ms
+2015-02-22T10:05:38.270-0600 [conn39] command meantest-dev.$cmd command: update { update: "sessions", writeConcern: { w: 1 }, ordered: true, updates: [ { q: { _id: "sL1CdK0xoUtsWnVT3VZonrMX6DXo1FwS" }, u: { _id: "sL1CdK0xoUtsWnVT3VZonrMX6DXo1FwS", session: "{"cookie":{"originalMaxAge":null,"expires":null,"httpOnly":true,"path":"/"},"passport":{}}", expires: new Date(1425830738129) }, multi: false, upsert: true } ] } keyUpdates:0 numYields:0  reslen:55 140ms
+2015-02-22T10:05:38.270-0600 [conn38] command meantest-dev.$cmd command: update { update: "sessions", writeConcern: { w: 1 }, ordered: true, updates: [ { q: { _id: "sL1CdK0xoUtsWnVT3VZonrMX6DXo1FwS" }, u: { _id: "sL1CdK0xoUtsWnVT3VZonrMX6DXo1FwS", session: "{"cookie":{"originalMaxAge":null,"expires":null,"httpOnly":true,"path":"/"},"passport":{}}", expires: new Date(1425830738132) }, multi: false, upsert: true } ] } keyUpdates:0 numYields:0  reslen:55 137ms
+2015-02-22T10:05:38.270-0600 [conn37] command meantest-dev.$cmd command: update { update: "sessions", writeConcern: { w: 1 }, ordered: true, updates: [ { q: { _id: "sL1CdK0xoUtsWnVT3VZonrMX6DXo1FwS" }, u: { _id: "sL1CdK0xoUtsWnVT3VZonrMX6DXo1FwS", session: "{"cookie":{"originalMaxAge":null,"expires":null,"httpOnly":true,"path":"/"},"passport":{}}", expires: new Date(1425830738151) }, multi: false, upsert: true } ] } keyUpdates:0 numYields:0  reslen:55 118ms
+2015-02-22T11:01:03.161-0600 [conn39] build index on: meantest-dev.customers properties: { v: 1, key: { _id: 1 }, name: "_id_", ns: "meantest-dev.customers" }
+2015-02-22T11:01:03.161-0600 [conn39] 	 added index to empty collection
+2015-02-22T11:23:44.131-0600 [conn60] build index on: meantest-dev.projects properties: { v: 1, key: { _id: 1 }, name: "_id_", ns: "meantest-dev.projects" }
+2015-02-22T11:23:44.133-0600 [conn60] 	 added index to empty collection
+2015-02-22T17:16:10.333-0600 [PeriodicTaskRunner] task: WriteBackManager::cleaner took: 363ms
+2015-02-22T17:16:11.225-0600 [TTLMonitor] query admin.system.indexes query: { expireAfterSeconds: { $exists: true } } planSummary: EOF ntoreturn:0 ntoskip:0 nscanned:0 nscannedObjects:0 keyUpdates:0 numYields:0 locks(micros) r:566597 nreturned:0 reslen:20 566ms
+2015-02-22T17:16:11.600-0600 [TTLMonitor] query local.system.indexes query: { expireAfterSeconds: { $exists: true } } planSummary: COLLSCAN ntoreturn:0 ntoskip:0 nscanned:1 nscannedObjects:1 keyUpdates:0 numYields:0 locks(micros) r:374551 nreturned:0 reslen:20 374ms
+2015-02-22T17:16:11.958-0600 [TTLMonitor] query meantest-dev.system.indexes query: { expireAfterSeconds: { $exists: true } } planSummary: COLLSCAN ntoreturn:0 ntoskip:0 nscanned:7 nscannedObjects:7 keyUpdates:0 numYields:0 locks(micros) r:357068 nreturned:1 reslen:129 357ms
+2015-02-22T17:27:00.474-0600 [conn65] command meantest-dev.$cmd command: update { update: "sessions", writeConcern: { w: 1 }, ordered: true, updates: [ { q: { _id: "4f6U35oreqKXRsKLmDTPc9J5RLBopwaK" }, u: { _id: "4f6U35oreqKXRsKLmDTPc9J5RLBopwaK", session: "{"cookie":{"originalMaxAge":null,"expires":null,"httpOnly":true,"path":"/"},"passport":{}}", expires: new Date(1425857220336) }, multi: false, upsert: true } ] } keyUpdates:0 numYields:0  reslen:131 137ms
+2015-02-25T21:22:59.132-0600 [PeriodicTaskRunner] task: WriteBackManager::cleaner took: 760ms
+2015-02-25T21:23:00.856-0600 [TTLMonitor] query admin.system.indexes query: { expireAfterSeconds: { $exists: true } } planSummary: EOF ntoreturn:0 ntoskip:0 nscanned:0 nscannedObjects:0 keyUpdates:0 numYields:0 locks(micros) r:1031810 nreturned:0 reslen:20 1031ms
+2015-02-25T21:23:02.122-0600 [TTLMonitor] query local.system.indexes query: { expireAfterSeconds: { $exists: true } } planSummary: COLLSCAN ntoreturn:0 ntoskip:0 nscanned:1 nscannedObjects:1 keyUpdates:0 numYields:1 locks(micros) r:2379731 nreturned:0 reslen:20 1190ms
+2015-02-25T21:23:02.605-0600 [TTLMonitor] query meantest-dev.system.indexes query: { expireAfterSeconds: { $exists: true } } planSummary: COLLSCAN ntoreturn:0 ntoskip:0 nscanned:7 nscannedObjects:7 keyUpdates:0 numYields:0 locks(micros) r:483629 nreturned:1 reslen:129 483ms
+2015-02-25T21:26:41.223-0600 [PeriodicTaskRunner] task: WriteBackManager::cleaner took: 281ms
+2015-02-25T21:26:43.991-0600 [TTLMonitor] query admin.system.indexes query: { expireAfterSeconds: { $exists: true } } planSummary: EOF ntoreturn:0 ntoskip:0 nscanned:0 nscannedObjects:0 keyUpdates:0 numYields:0 locks(micros) r:142844 nreturned:0 reslen:20 142ms
+2015-02-25T21:26:44.168-0600 [TTLMonitor] query local.system.indexes query: { expireAfterSeconds: { $exists: true } } planSummary: COLLSCAN ntoreturn:0 ntoskip:0 nscanned:1 nscannedObjects:1 keyUpdates:0 numYields:0 locks(micros) r:176812 nreturned:0 reslen:20 176ms
+2015-02-26T21:20:10.937-0600 [PeriodicTaskRunner] task: WriteBackManager::cleaner took: 2907ms
+2015-02-26T21:20:11.916-0600 [TTLMonitor] query admin.system.indexes query: { expireAfterSeconds: { $exists: true } } planSummary: EOF ntoreturn:0 ntoskip:0 nscanned:0 nscannedObjects:0 keyUpdates:0 numYields:0 locks(micros) r:387286 nreturned:0 reslen:20 387ms
+2015-02-26T21:20:12.460-0600 [TTLMonitor] query local.system.indexes query: { expireAfterSeconds: { $exists: true } } planSummary: COLLSCAN ntoreturn:0 ntoskip:0 nscanned:1 nscannedObjects:1 keyUpdates:0 numYields:1 locks(micros) r:938278 nreturned:0 reslen:20 469ms
+2015-02-26T21:20:12.685-0600 [TTLMonitor] query meantest-dev.system.indexes query: { expireAfterSeconds: { $exists: true } } planSummary: COLLSCAN ntoreturn:0 ntoskip:0 nscanned:7 nscannedObjects:7 keyUpdates:0 numYields:0 locks(micros) r:225396 nreturned:1 reslen:129 225ms
+2015-03-10T19:21:27.167-0500 ***** SERVER RESTARTED *****
+2015-03-10T19:21:27.198-0500 [initandlisten] MongoDB starting : pid=12341 port=27017 dbpath=/Users/home/Sites/data/db 64-bit host=Mahers-MacBook-Pro.local
+2015-03-10T19:21:27.198-0500 [initandlisten] 
+2015-03-10T19:21:27.198-0500 [initandlisten] ** WARNING: soft rlimits too low. Number of files is 256, should be at least 1000
+2015-03-10T19:21:27.198-0500 [initandlisten] db version v2.6.7
+2015-03-10T19:21:27.198-0500 [initandlisten] git version: a7d57ad27c382de82e9cb93bf983a80fd9ac9899
+2015-03-10T19:21:27.198-0500 [initandlisten] build info: Darwin bs-osx-108-x86-64-2.10gen.cc 12.3.0 Darwin Kernel Version 12.3.0: Sun Jan  6 22:37:10 PST 2013; root:xnu-2050.22.13~1/RELEASE_X86_64 x86_64 BOOST_LIB_VERSION=1_49
+2015-03-10T19:21:27.198-0500 [initandlisten] allocator: system
+2015-03-10T19:21:27.199-0500 [initandlisten] options: { config: "/Users/home/sites/mongodb.conf", net: { bindIp: "127.0.0.1", port: 27017 }, storage: { dbPath: "/Users/home/Sites/data/db", journal: { enabled: true } }, systemLog: { destination: "file", logAppend: true, path: "/Users/home/sites/data/mongod.log", quiet: true } }
+2015-03-10T19:21:27.199-0500 [initandlisten] journal dir=/Users/home/Sites/data/db/journal
+2015-03-10T19:21:27.199-0500 [initandlisten] recover begin
+2015-03-10T19:21:27.219-0500 [initandlisten] recover lsn: 326080127
+2015-03-10T19:21:27.219-0500 [initandlisten] recover /Users/home/Sites/data/db/journal/j._0
+2015-03-10T19:21:27.220-0500 [initandlisten] recover skipping application of section seq:0 < lsn:326080127
+2015-03-10T19:21:27.243-0500 [initandlisten] recover skipping application of section seq:164335 < lsn:326080127
+2015-03-10T19:21:27.244-0500 [initandlisten] recover skipping application of section seq:931225 < lsn:326080127
+2015-03-10T19:21:27.245-0500 [initandlisten] recover skipping application of section seq:1698005 < lsn:326080127
+2015-03-10T19:21:27.246-0500 [initandlisten] recover skipping application of section seq:2519445 < lsn:326080127
+2015-03-10T19:21:27.246-0500 [initandlisten] recover skipping application of section seq:3286035 < lsn:326080127
+2015-03-10T19:21:27.246-0500 [initandlisten] recover skipping application of section seq:4052525 < lsn:326080127
+2015-03-10T19:21:27.247-0500 [initandlisten] recover skipping application of section seq:5421035 < lsn:326080127
+2015-03-10T19:21:27.247-0500 [initandlisten] recover skipping application of section seq:6187415 < lsn:326080127
+2015-03-10T19:21:27.248-0500 [initandlisten] recover skipping application of section more...
+2015-03-10T19:21:27.369-0500 [initandlisten] recover cleaning up
+2015-03-10T19:21:27.369-0500 [initandlisten] removeJournalFiles
+2015-03-10T19:21:27.404-0500 [initandlisten] recover done
+2015-03-10T19:21:27.673-0500 [initandlisten] waiting for connections on port 27017
+2015-03-10T20:29:14.568-0500 [conn4] update meantest-dev.sessions query: { _id: "t2AaAPMB1iEH_LQSEMI3KTncNyyzM9s2" } update: { _id: "t2AaAPMB1iEH_LQSEMI3KTncNyyzM9s2", session: "{"cookie":{"originalMaxAge":null,"expires":null,"httpOnly":true,"path":"/"},"passport":{"user":"54e9e0ce2a0889b0aa512432"}}", expires: new Date(1427246954452) } nMatched:1 nModified:1 keyUpdates:1 numYields:0 locks(micros) w:63 115ms
+2015-03-10T20:29:14.600-0500 [conn4] command meantest-dev.$cmd command: update { update: "sessions", writeConcern: { w: 1 }, ordered: true, updates: [ { q: { _id: "t2AaAPMB1iEH_LQSEMI3KTncNyyzM9s2" }, u: { _id: "t2AaAPMB1iEH_LQSEMI3KTncNyyzM9s2", session: "{"cookie":{"originalMaxAge":null,"expires":null,"httpOnly":true,"path":"/"},"passport":{"user":"54e9e0ce2a0889b0aa512432"}}", expires: new Date(1427246954452) }, multi: false, upsert: true } ] } keyUpdates:0 numYields:0  reslen:55 146ms
+2015-03-12T09:48:52.283-0500 [PeriodicTaskRunner] task: WriteBackManager::cleaner took: 1099ms
+2015-03-12T09:48:55.497-0500 [TTLMonitor] query admin.system.indexes query: { expireAfterSeconds: { $exists: true } } planSummary: EOF ntoreturn:0 ntoskip:0 nscanned:0 nscannedObjects:0 keyUpdates:0 numYields:0 locks(micros) r:2088943 nreturned:0 reslen:20 2088ms
+2015-03-12T09:48:56.839-0500 [TTLMonitor] query local.system.indexes query: { expireAfterSeconds: { $exists: true } } planSummary: COLLSCAN ntoreturn:0 ntoskip:0 nscanned:1 nscannedObjects:1 keyUpdates:0 numYields:1 locks(micros) r:2471833 nreturned:0 reslen:20 1236ms
+2015-03-12T09:48:57.785-0500 [TTLMonitor] query meantest-dev.system.indexes query: { expireAfterSeconds: { $exists: true } } planSummary: COLLSCAN ntoreturn:0 ntoskip:0 nscanned:7 nscannedObjects:7 keyUpdates:0 numYields:0 locks(micros) r:945947 nreturned:1 reslen:129 945ms
+2015-03-12T21:01:13.017-0500 [conn225] update meantest-dev.sessions query: { _id: "t2AaAPMB1iEH_LQSEMI3KTncNyyzM9s2" } update: { _id: "t2AaAPMB1iEH_LQSEMI3KTncNyyzM9s2", session: "{"cookie":{"originalMaxAge":null,"expires":null,"httpOnly":true,"path":"/"},"passport":{"user":"54e9e0ce2a0889b0aa512432"}}", expires: new Date(1427421672908) } nscanned:1 nscannedObjects:1 nMatched:1 nModified:1 keyUpdates:1 numYields:0 locks(micros) w:141 107ms
+2015-03-12T21:01:13.017-0500 [conn222] update meantest-dev.sessions query: { _id: "t2AaAPMB1iEH_LQSEMI3KTncNyyzM9s2" } update: { _id: "t2AaAPMB1iEH_LQSEMI3KTncNyyzM9s2", session: "{"cookie":{"originalMaxAge":null,"expires":null,"httpOnly":true,"path":"/"},"passport":{"user":"54e9e0ce2a0889b0aa512432"}}", expires: new Date(1427421672909) } nscanned:1 nscannedObjects:1 nMatched:1 nModified:1 keyUpdates:1 numYields:0 locks(micros) w:65 107ms
+2015-03-12T21:01:13.017-0500 [conn225] command meantest-dev.$cmd command: update { update: "sessions", writeConcern: { w: 1 }, ordered: true, updates: [ { q: { _id: "t2AaAPMB1iEH_LQSEMI3KTncNyyzM9s2" }, u: { _id: "t2AaAPMB1iEH_LQSEMI3KTncNyyzM9s2", session: "{"cookie":{"originalMaxAge":null,"expires":null,"httpOnly":true,"path":"/"},"passport":{"user":"54e9e0ce2a0889b0aa512432"}}", expires: new Date(1427421672908) }, multi: false, upsert: true } ] } keyUpdates:0 numYields:0  reslen:55 107ms
+2015-03-12T21:01:13.017-0500 [conn222] command meantest-dev.$cmd command: update { update: "sessions", writeConcern: { w: 1 }, ordered: true, updates: [ { q: { _id: "t2AaAPMB1iEH_LQSEMI3KTncNyyzM9s2" }, u: { _id: "t2AaAPMB1iEH_LQSEMI3KTncNyyzM9s2", session: "{"cookie":{"originalMaxAge":null,"expires":null,"httpOnly":true,"path":"/"},"passport":{"user":"54e9e0ce2a0889b0aa512432"}}", expires: new Date(1427421672909) }, multi: false, upsert: true } ] } keyUpdates:0 numYields:0  reslen:55 107ms
+2015-03-12T21:01:13.373-0500 [conn225] update meantest-dev.sessions query: { _id: "t2AaAPMB1iEH_LQSEMI3KTncNyyzM9s2" } update: { _id: "t2AaAPMB1iEH_LQSEMI3KTncNyyzM9s2", session: "{"cookie":{"originalMaxAge":null,"expires":null,"httpOnly":true,"path":"/"},"passport":{"user":"54e9e0ce2a0889b0aa512432"}}", expires: new Date(1427421673145) } nMatched:1 nModified:1 keyUpdates:1 numYields:0 locks(micros) w:51 228ms
+2015-03-12T21:01:13.373-0500 [conn223] update meantest-dev.sessions query: { _id: "t2AaAPMB1iEH_LQSEMI3KTncNyyzM9s2" } update: { _id: "t2AaAPMB1iEH_LQSEMI3KTncNyyzM9s2", session: "{"cookie":{"originalMaxAge":null,"expires":null,"httpOnly":true,"path":"/"},"passport":{"user":"54e9e0ce2a0889b0aa512432"}}", expires: new Date(1427421673144) } nMatched:1 nModified:1 keyUpdates:1 numYields:0 locks(micros) w:88 228ms
+2015-03-12T21:01:13.373-0500 [conn225] command meantest-dev.$cmd command: update { update: "sessions", writeConcern: { w: 1 }, ordered: true, updates: [ { q: { _id: "t2AaAPMB1iEH_LQSEMI3KTncNyyzM9s2" }, u: { _id: "t2AaAPMB1iEH_LQSEMI3KTncNyyzM9s2", session: "{"cookie":{"originalMaxAge":null,"expires":null,"httpOnly":true,"path":"/"},"passport":{"user":"54e9e0ce2a0889b0aa512432"}}", expires: new Date(1427421673145) }, multi: false, upsert: true } ] } keyUpdates:0 numYields:0  reslen:55 228ms
+2015-03-12T21:01:13.373-0500 [conn223] command meantest-dev.$cmd command: update { update: "sessions", writeConcern: { w: 1 }, ordered: true, updates: [ { q: { _id: "t2AaAPMB1iEH_LQSEMI3KTncNyyzM9s2" }, u: { _id: "t2AaAPMB1iEH_LQSEMI3KTncNyyzM9s2", session: "{"cookie":{"originalMaxAge":null,"expires":null,"httpOnly":true,"path":"/"},"passport":{"user":"54e9e0ce2a0889b0aa512432"}}", expires: new Date(1427421673144) }, multi: false, upsert: true } ] } keyUpdates:0 numYields:0  reslen:55 228ms
