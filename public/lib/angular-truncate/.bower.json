@@ -1,0 +1,13 @@
+{
+  "name": "angular-truncate",
+  "homepage": "https://github.com/sparkalow/angular-truncate",
+  "_release": "997d4b4bda",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "997d4b4bda5d3508193d8b2120156696f8e14de3"
+  },
+  "_source": "git://github.com/sparkalow/angular-truncate.git",
+  "_target": "*",
+  "_originalSource": "angular-truncate"
+}

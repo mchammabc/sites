@@ -1,0 +1,13 @@
+{
+  "name": "angular-bootstrap-nav-tree",
+  "homepage": "https://github.com/nickperkinslondon/angular-bootstrap-nav-tree",
+  "_release": "7fb14dd72d",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "7fb14dd72da5ec7f18266de40806486c14826e8d"
+  },
+  "_source": "git://github.com/nickperkinslondon/angular-bootstrap-nav-tree.git",
+  "_target": "*",
+  "_originalSource": "angular-bootstrap-nav-tree"
+}
