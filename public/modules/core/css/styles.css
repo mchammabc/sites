@@ -71,19 +71,19 @@ body {
   -webkit-font-smoothing: antialiased !important;
 }
 body.bg_style_1 {
-  background: url("../images/bg.png") transparent !important;
+  background: url("../img/bg.png") transparent !important;
 }
 body.bg_style_2 {
-  background: url("../images/bg_2.png") transparent !important;
+  background: url("../img/bg_2.png") transparent !important;
 }
 body.bg_style_3 {
-  background: url("../images/bg_3.png") transparent !important;
+  background: url("../img/bg_3.png") transparent !important;
 }
 body.bg_style_4 {
-  background: url("../images/bg_4.png") transparent !important;
+  background: url("../img/bg_4.png") transparent !important;
 }
 body.bg_style_5 {
-  background: url("../images/bg_5.png") transparent !important;
+  background: url("../img/bg_5.png") transparent !important;
 }
 
 ::-moz-selection {
@@ -442,6 +442,11 @@ h5.over-title {
 .navbar .navbar-collapse.in {
   overflow-y: visible;
 }
+@media (max-width: 991px) {
+  .app-slide-off .navbar, .app-offsidebar-open .navbar {
+    position: absolute !important;
+  }
+}
 @media (min-width: 992px) {
   .app-navbar-fixed .navbar .navbar-collapse, .app-navbar-fixed .navbar .navbar-header {
     position: fixed;
@@ -625,7 +630,7 @@ h5.over-title {
 @media (max-width: 991px) and (min-width: 767px) {
   .navbar .navbar-right {
     position: relative;
-    margin-right: 1px 35px 0 0;
+    margin: 1px 35px 0 0;
   }
 }
 @media (min-width: 768px) {
@@ -753,6 +758,9 @@ h5.over-title {
 }
 .navbar .navbar-right .dropdown-menu.dropdown-large {
   width: 300px;
+}
+.navbar .navbar-right .dropdown-menu.dropdown-messages .drop-down-wrapper .media-body {
+  width: auto !important;
 }
 .navbar .navbar-right .dropdown-menu.dropdown-messages .drop-down-wrapper ul > li a {
   -moz-border-radius: 3px;
@@ -3806,7 +3814,7 @@ a.text-light:hover {
   border: none;
 }
 .panel-note .panel-heading {
-  background: url("../images/note_dot.png") repeat-x;
+  background: url("../img/note_dot.png") repeat-x;
   border-bottom: 0 none;
   padding-top: 30px;
   padding-bottom: 10px;
@@ -3818,7 +3826,7 @@ a.text-light:hover {
   margin: 0;
 }
 .panel-note .panel-body {
-  background: url("../images/line.png") repeat;
+  background: url("../img/line.png") repeat;
   padding: 0;
   margin: 0 15px;
   line-height: 18px;
@@ -4247,6 +4255,63 @@ a.text-light:hover {
 /* ---------------------------------------------------------------------- */
 /*  Animations
 /* ---------------------------------------------------------------------- */
+@-webkit-keyframes fadeOutUpShort {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -20px, 0);
+    transform: translate3d(0, -20px, 0);
+  }
+}
+@keyframes fadeOutUpShort {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -20px, 0);
+    -ms-transform: translate3d(0, -20px, 0);
+    transform: translate3d(0, -20px, 0);
+  }
+}
+.fadeOutUpShort {
+  -webkit-animation-name: fadeOutUpShort;
+  animation-name: fadeOutUpShort;
+}
+
+@-webkit-keyframes fadeInUpShort {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 20px, 0);
+    transform: translate3d(0, 20px, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@keyframes fadeInUpShort {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 20px, 0);
+    -ms-transform: translate3d(0, 20px, 0);
+    transform: translate3d(0, 20px, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+  }
+}
+.fadeInUpShort {
+  -webkit-animation-name: fadeInUpShort;
+  animation-name: fadeInUpShort;
+}
+
 .smooth.ng-animate {
   position: absolute;
   width: 100%;
@@ -4325,13 +4390,13 @@ a.text-light:hover {
 }
 
 .fade-in-up.ng-enter {
-  -webkit-animation: fadeInUp 0.5s;
-  animation: fadeInUp 0.5s;
+  -webkit-animation: fadeInUpShort 0.5s;
+  animation: fadeInUpShort 0.5s;
 }
 
 .fade-in-up.ng-leave {
-  -webkit-animation: fadeOutUp 0.5s;
-  animation: fadeOutUp 0.5s;
+  -webkit-animation: fadeOutUpShort 0.5s;
+  animation: fadeOutUpShort 0.5s;
 }
 
 .fade-in-down.ng-enter {
@@ -4821,7 +4886,7 @@ textarea.autosize.area-animated:focus {
   background: #ffffff;
 }
 .note-editor textarea {
-  background: url("../images/line_detail.png") repeat;
+  background: url("../img/line_detail.png") repeat;
   line-height: 20px;
   margin-top: 10px;
   min-height: 140px;
@@ -4833,7 +4898,7 @@ textarea.autosize.area-animated:focus {
   background-color: #ffffff !important;
 }
 .note-editor:before {
-  background: url("../images/note_dot.png") repeat-x;
+  background: url("../img/note_dot.png") repeat-x;
   position: absolute;
   height: 12px;
   top: 0;

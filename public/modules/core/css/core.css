@@ -1,5 +1,5 @@
 .content {
-	margin-top: 50px;
+	margin-top: 65px;
 }
 .undecorated-link:hover {
 	text-decoration: none;
@@ -12,4 +12,19 @@
 }
 .ng-valid.ng-dirty {
 	border-color: #78FA89;
+}
+
+.navbar-inverse{
+	background-image:linear-gradient(to bottom,transparent 0%, transparent 100%);
+	background-color:transparent;	
+}
+
+.navbar-inverse{
+	background-image:linear-gradient(to bottom,transparent 0%, transparent 100%);
+	background-color:transparent;	
+}
+
+.signin form-horizontal{
+	width:100%;
+	
 }

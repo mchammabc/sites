@@ -88,6 +88,11 @@ var UserSchema = new Schema({
 	},
 	resetPasswordExpires: {
 		type: Date
+	},
+	tenantid:{
+		type:Number,
+		required:true,
+		ref:'Tenant'
 	}
 });
 

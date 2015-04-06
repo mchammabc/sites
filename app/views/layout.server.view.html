@@ -44,13 +44,26 @@
 </head>
 
 <body class="ng-cloak">
-	<header data-ng-include="'/modules/core/views/header.client.view.html'" class="navbar navbar-fixed-top navbar-inverse"></header>
-	<section class="content">
-		<section class="container">
-			{% block content %}{% endblock %}
-		</section>
-	</section>
 
+<div id="app" ng-class="{'app-mobile' : app.isMobile, 'app-navbar-fixed' : app.layout.isNavbarFixed, 'app-sidebar-fixed' : app.layout.isSidebarFixed, 'app-sidebar-closed':app.layout.isSidebarClosed, 'app-footer-fixed':app.layout.isFooterFixed}">
+		<!-- sidebar -->
+	<div class="sidebar app-aside" id="sidebar" toggleable parent-active-class="app-slide-off" >
+		<div perfect-scrollbar wheel-propagation="false" suppress-scroll-x="true" class="sidebar-container">
+			<div data-ng-include=" '/modules/core/views/partials/sidebar.html' "></div>
+		</div>
+	</div>
+	<!-- / sidebar -->
+	<div class="app-content" ng-class="{loading: loading}">
+		<header data-ng-include="'/modules/core/views/header.client.view.html'" class="navbar navbar-fixed-top navbar-inverse navbar-default navbar-static-top"></header>
+		<div class="main-content" >
+		<section ui-view class="wrap-content container fade-in-up content">
+			<section class="wrap-content container fade-in-up" id="container">
+			{% block content %}{% endblock %}
+			</section>
+		</section>
+		</div>
+	</div>
+</div>
 	<!--Embedding The User Object-->
 	<script type="text/javascript">
 		var user = {{ user | json | safe }};
@@ -63,6 +76,10 @@
 	<!--Livereload script rendered -->
 	<script type="text/javascript" src="http://{{request.hostname}}:35729/livereload.js"></script>
 	{% endif %}
+	
+	<!-- footer -->
+	<footer data-ng-include=" '/modules/core/views/partials/footer.html' "></footer>
+	<!-- / footer -->
 </body>
 
 </html>

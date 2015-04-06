@@ -82,7 +82,6 @@ angular.module('core').service('Menus', [
 		this.addMenuItem = function(menuId, menuItemTitle, menuItemURL, menuItemType, menuItemUIRoute, isPublic, roles, position) {
 			// Validate that the menu exists
 			this.validateMenuExistance(menuId);
-	
 			// Push new menu item
 			this.menus[menuId].items.push({
 				title: menuItemTitle,
@@ -96,7 +95,7 @@ angular.module('core').service('Menus', [
 				items: [],
 				shouldRender: shouldRender
 			});
-console.log(menuItemTitle,this.menus[menuId].items);
+
 			// Return the menu object
 			return this.menus[menuId];
 		};
@@ -105,7 +104,7 @@ console.log(menuItemTitle,this.menus[menuId].items);
 		this.addSubMenuItem = function(menuId, rootMenuItemURL, menuItemTitle, menuItemURL, menuItemUIRoute, isPublic, roles, position) {
 			// Validate that the menu exists
 			this.validateMenuExistance(menuId);
-
+			console.log('Submenu',menuId,rootMenuItemURL,menuItemTitle,menuItemURL,menuItemUIRoute,isPublic,roles,position);
 			// Search for menu item
 			for (var itemIndex in this.menus[menuId].items) {
 				if (this.menus[menuId].items[itemIndex].link === rootMenuItemURL) {
