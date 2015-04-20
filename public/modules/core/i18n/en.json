@@ -56,6 +56,47 @@
       "dashboard": {
       	"MAIN": "Dashboard"
       },
+      "relationships": {
+      	"MAIN": "Relationships",
+        "CUSTOMERS":  {
+        	"MAIN": "Customers",
+        	"NEW" : "New Customer",
+        	"LIST" : "List Customers"
+        },
+        "CONTACTS": {
+        	"MAIN": "Contacts",
+        	"NEW" : "New Contact",
+        	"LIST" : "List Contacts"
+        }
+      },
+      "projects": {
+      	"MAIN": "Projects",
+      	"NEW" : "New Project",
+        "LIST" : "List Projects"
+      },
+      "time": {
+      	"MAIN": "Time",
+      	"TRACKING": {
+        	"MAIN": "Time Tracking",
+        	"NEW" : "New Time",
+        	"LIST" : "List Time"
+        },
+      	"APPROVALS":"Approve Time"
+      },
+      "tasks": {
+      	"MAIN": "Tasks",
+      	"NEW" : "New Task",
+        "LIST" : "List Tasks"
+      },
+	 "reports": {
+      	"MAIN": "Reports",
+      	"CUSTOMERS":"Customers",
+      	"PROJECTS":"Projects",
+      	"TIME":"Time",
+      	"TASKS":"Tasks",
+      	"USERS":"Users"
+      	
+      },
       "element": {
       	"MAIN": "UI Elements",
         "ELEMENTS": "Elements",
@@ -111,7 +152,7 @@
         "SEARCHRESULT": "Search Results",
         "ERROR404": "Error 404",
         "ERROR500": "Error 500",
-        "PRICING": "Pricing Table"
+        "PRICING": "Pricing"
       },
       "3level": {
         "MAIN": "3 Level Menu",
