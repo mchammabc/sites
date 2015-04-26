@@ -23,6 +23,11 @@ var TaskSchema = new Schema({
 	user: {
 		type: Schema.ObjectId,
 		ref: 'User'
+	},
+	tenantid:{
+		type:Number,
+		required:true,
+		ref:'Tenant'
 	}
 });
 

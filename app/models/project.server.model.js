@@ -33,6 +33,12 @@ var ProjectSchema = new Schema({
 	customer:{
 		type: Schema.ObjectId,
 		ref: 'Customer'
+	},
+	,
+	tenantid:{
+		type:Number,
+		required:true,
+		ref:'Tenant'
 	}
 });
 

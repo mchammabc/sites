@@ -17,6 +17,12 @@ var TenantSchema = new Schema({
 		required: true,
 		trim: true
 	},
+	edition: {
+		type: String,
+		default: '',
+		required: true,
+		trim: true
+	},
 		email: {
 		type: String,
 		default: '',

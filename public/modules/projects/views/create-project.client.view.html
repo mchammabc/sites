@@ -4,44 +4,118 @@
     </div>
     <div class="col-md-12">
         <form class="form-horizontal" data-ng-submit="create()" novalidate>
+        <div class="row">
+                <div class="col-md-5">
+                 <div class="form-group">
+                   <input type="submit" class="btn btn-primary">
+               </div>
+               </div>
+        </div>
             <div class="row">
-            <div class="col-md-5">
+            
             <fieldset>
+            <div class="col-md-5">
                 <div class="form-group">
-                    <label class="control-label" for="name">Name</label>
+                    <label class="control-label" for="name">Project Name</label>
                     <div class="controls">
-                        <input type="text" data-ng-model="name" id="name" class="form-control" placeholder="Name" required>
+                        <input type="text" data-ng-model="name" id="name" class="form-control" placeholder="Enter Name" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label" for="name">Customer</label>
-                    <div class="controls">
-                        <select>
+                    <div class="controls input-group">
+                        <select class="form-control">
                         <option data-ng-repeat="customer in customers">{{customer.name}} </option>
                         </select>
+                        <span class="input-group-btn">
+								<button type="button" class="btn btn-default" ng-click="open($event)">
+									<i class="glyphicon glyphicon-chevron-down"></i>
+								</button> </span>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" for="name">Email</label>
-                    <div class="controls">
-                        <input type="text" data-ng-model="email" id="email" class="form-control" placeholder="Email" required>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <input type="submit" class="btn btn-default">
                 </div>
 				<div data-ng-show="error" class="text-danger">
 					<strong data-ng-bind="error"></strong>
 				</div>
 				
+            </div>
+                        <div class="col-md-5 col-md-offset-1">
+                <div class="form-group">
+                    <label class="control-label" for="status">Status</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="status" id="email" class="form-control" placeholder="Enter Status" required>
+                    </div>
+                    </div>
+                    <div class="form-group">
+                   <label class="control-label" for="name">Start Date</label>
+					 <div class="controls">
+						<p class="input-group" data-ng-controller="ProjectsDateController">
+							<input type="text" class="form-control" datepicker-popup="{{format}}" data-ng-model="startdt" is-open="opened" min-date="minDate" max-date="'2015-12-31'" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+							<span class="input-group-btn">
+								<button type="button" class="btn btn-default" ng-click="open($event)">
+									<i class="glyphicon glyphicon-calendar"></i>
+								</button> </span>
+						</p>
+					</div>
+					</div>
+				<div data-ng-show="error" class="text-danger">
+					<strong data-ng-bind="error"></strong>
+				</div>
+			</div>	
             </fieldset>
+            
+            
             </div>
-            </div>
-        </form>
-        <tabset class="tabbable tabs-left">
+              <tabset class="tabbable">
         			<tab>
 						<tab-heading>
-							Tab 1
+							Description
+						</tab-heading>
+							<textarea class="form-control" rows="10"  placeholder="Enter description" wrap="hard"></textarea>
+					</tab>
+		<tab>
+			<tab-heading>
+						Tasks
+			</tab-heading>
+			<div class="col-md-12">
+				<h5 class="over-title margin-bottom-15">Inline <span class="text-bold">edit example</span></h5>
+				<!-- /// controller:  'ngTableCtrl6' -  localtion: assets/js/controllers/ngTableCtrl.js /// -->
+				<div ng-controller="ngTableCtrl6">
+					<div class="row margin-bottom-10">
+						<div class="col-md-12">
+							<button ng-click="tableParams.sorting({})" class="btn btn-default pull-right">
+								Clear sorting
+							</button>
+						</div>
+					</div>
+					<strong>Sorting:</strong> {{tableParams.sorting()|json}}
+					<div class="table-responsive">
+						<table ng-table="tableParams" class="table">
+							<tbody ng-repeat="p in $data">
+								<tr id="tr{{p.id}}" ng-class-odd="'odd'" ng-class-even="'even'">
+									<td class="rowTd" data-title="'ID'"          sortable="'id'">{{p.id}}</td>
+									<td class="rowTd" data-title="'Firstname'"   sortable="'fn'">{{p.fn}}</td>
+									<td class="rowTd" data-title="'Lastname'"    sortable="'ln'">{{p.ln}}</td>
+									<td class="rowTd" data-title="'Description'" sortable="'dc'">{{p.dc}}</td>
+									<td class="rowTd" data-title="'Email'"       sortable="'em'">{{p.em}}</td>
+									<td class="rowTd" data-title="'Phone'"       sortable="'ph'">{{p.ph}}</td>
+									<td class="rowTd" >
+									<div class="pull-right margin-right-10">
+										<input type=button class="btn btn-primary btn-o btn-sm" id="editRowBtn{{p.id}}" value="edit"
+										ng-click="setEditId(p.id)">
+									</div></td>
+								</tr>
+								<tr ng-show="editId===p.id" ng-if="editId===p.id">
+									<td colspan="7" ng-include src="'modules/projects/views/partials/editRow.html'"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</tab>
+					<tab>
+						<tab-heading>
+							Resources
 						</tab-heading>
 						<p>
 							Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth.
@@ -50,28 +124,20 @@
 							Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.
 						</p>
 					</tab>
-					<tab>
-											<tab-heading>
-							Tab 2
-						</tab-heading>
-						<p>
-							Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est.
-						</p>
-						<p>
-							Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth.
-						</p>
-					</tab>
-					<tab>
+										<tab>
 						<tab-heading>
-							Tab 3
+							Preferences
 						</tab-heading>
-						<p>
-							Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin.
-						</p>
 						<p>
 							Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth.
 						</p>
+						<p>
+							Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.
+						</p>
 					</tab>
+						
         </tabset>
+        </form>
+ 
     </div>
 </section>

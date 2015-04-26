@@ -53,7 +53,7 @@ angular.module(ApplicationConfiguration.applicationModuleName).run(['$rootScope'
                  layout: {
                      isNavbarFixed: true, //true if you want to initialize the template with fixed header
                      isSidebarFixed: true, // true if you want to initialize the template with fixed sidebar
-                     isSidebarClosed: false, // true if you want to initialize the template with closed sidebar
+                     isSidebarClosed: true, // true if you want to initialize the template with closed sidebar
                      isFooterFixed: false, // true if you want to initialize the template with fixed footer
                      theme: 'theme-1', // indicate the theme chosen for your project
                      logo: 'modules/core/img/logo.png', // relative path of the project logo

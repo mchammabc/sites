@@ -74,6 +74,9 @@ exports.signin = function(req, res, next) {
 				if (err) {
 					res.status(400).send(err);
 				} else {
+					console.log('User Data',user);
+					req.session.tenantid = user.tenantid;
+					console.log('User Tenant',req.session.tenantid);
 					res.json(user);
 				}
 			});

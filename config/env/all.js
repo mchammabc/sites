@@ -16,6 +16,7 @@ module.exports = {
 				'public/lib/bootstrap/dist/css/bootstrap.css',
 				'public/lib/bootstrap/dist/css/bootstrap-theme.css',
 				'public/lib/font-awesome/css/font-awesome.min.css',
+				'public/lib/ng-table/dist/ng-table.min.css',
 				'public/lib/themify-icons/themify-icons.css',
 				'public/lib/angular-loading-bar/build/loading-bar.min.css',
 				'public/lib/animate.css/animate.min.css'
@@ -34,6 +35,7 @@ module.exports = {
 				'public/lib/angular-touch/angular-touch.min.js',
 				'public/lib/angular-sanitize/angular-sanitize.min.js',
 				'public/lib/angular-ui-router/release/angular-ui-router.min.js',
+				'public/lib/ng-table/dist/ng-table.min.js',
 				'public/lib/ngstorage/ngStorage.min.js',
 				'public/lib/angular-translate/angular-translate.min.js',
 				'public/lib/angular-translate-loader-url/angular-translate-loader-url.min.js',

@@ -28,3 +28,9 @@
 	width:100%;
 	
 }
+.tabbable .tab-content {
+	height: 300px;
+}
+.page-header {
+	margin: 10px 0px 10px;
+}
