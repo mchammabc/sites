@@ -5,7 +5,7 @@ var ApplicationConfiguration = (function() {
 	// Init module configuration options
 	var applicationModuleName = 'meantest';
 	var applicationModuleVendorDependencies = ['ngResource', 'ui.router', 'ui.bootstrap', 'ui.utils', 'ngTable',
-	                                           'ngAnimate','ngCookies','ngStorage','ngSanitize','ngTouch','oc.lazyLoad',
+	                                           'ngAnimate','ngCookies','ui.select','ngStorage','ngSanitize','ngTouch','oc.lazyLoad',
 	                                           'cfp.loadingBar','ncy-angular-breadcrumb','duScroll','pascalprecht.translate'];
 
 	// Add a new vertical module

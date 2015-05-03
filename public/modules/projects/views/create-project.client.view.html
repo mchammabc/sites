@@ -16,35 +16,44 @@
             <fieldset>
             <div class="col-md-5">
                 <div class="form-group">
-                    <label class="control-label" for="name">Project Name</label>
+                    <label class="control-label" for="name">Project Name <span class="symbol required"></span></label>
                     <div class="controls">
                         <input type="text" data-ng-model="name" id="name" class="form-control" placeholder="Enter Name" required>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label" for="name">Customer</label>
-                    <div class="controls input-group">
-                        <select class="form-control">
-                        <option data-ng-repeat="customer in customers">{{customer.name}} </option>
-                        </select>
-                        <span class="input-group-btn">
-								<button type="button" class="btn btn-default" ng-click="open($event)">
-									<i class="glyphicon glyphicon-chevron-down"></i>
-								</button> </span>
-                    </div>
-                </div>
+									<label>
+										Customer <span class="symbol required"></span>
+									</label>
+									<ui-select ng-model="customer" theme="bootstrap">
+										<ui-select-match placeholder="Select in the list...">
+											{{$select.selected.name}}
+										</ui-select-match>
+										<ui-select-choices group-by="'group'" repeat="customer in customers | filter: $select.search">
+											<span ng-bind-html="customer.name | highlight: $select.search"></span>
+											<small ng-bind-html="customer.email | highlight: $select.search"></small>
+										</ui-select-choices>
+									</ui-select>
+				</div>
 				<div data-ng-show="error" class="text-danger">
 					<strong data-ng-bind="error"></strong>
 				</div>
 				
             </div>
-                        <div class="col-md-5 col-md-offset-1">
+            <div class="col-md-5 col-md-offset-1">
                 <div class="form-group">
-                    <label class="control-label" for="status">Status</label>
-                    <div class="controls">
-                        <input type="text" data-ng-model="status" id="email" class="form-control" placeholder="Enter Status" required>
-                    </div>
-                    </div>
+				<label>
+					Status <span class="symbol required"></span>
+				</label>
+				<ui-select ng-model="projectstatus" theme="bootstrap">
+					<ui-select-match placeholder="Select in the list...">
+						{{$select.selected}}
+					</ui-select-match>
+					<ui-select-choices group-by="'group'" repeat="status in projectstatus | filter: $select.search">
+						<span ng-bind-html="status | highlight: $select.search"></span>
+					</ui-select-choices>
+				</ui-select>
+				</div>
                     <div class="form-group">
                    <label class="control-label" for="name">Start Date</label>
 					 <div class="controls">

@@ -1,4 +1,17 @@
-angular.module('projects').controller('ngTableCtrl6', ["$scope", "$filter", "ngTableParams", function ($scope, $filter, ngTableParams) {
+'use strict';
+
+angular.module('users').controller('UsersController', ['$scope','Users',
+	function($scope,Users) {
+		// Find a list of Projects
+		$scope.find = function() {
+			$scope.users = Users.query();
+			console.log($scope.users);
+		};
+	}
+]);
+
+
+angular.module('users').controller('ngTableCtrl7', ["$scope", "$filter", "ngTableParams", function ($scope, $filter, ngTableParams) {
 
     var data = [{
 

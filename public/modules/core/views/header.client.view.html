@@ -40,20 +40,58 @@
 			</li>
 		</ul>
 
-		<ul class="nav navbar-nav navbar-right" data-ng-show="authentication.user">
+			<ul class="nav navbar-nav navbar-right" data-ng-show="authentication.user" ct-fullheight="window" data-ct-fullheight-exclusion="header" data-ct-fullheight-if="isSmallDevice">
+							<!-- start: QUICKTIME DROPDOWN -->
+			<li class="dropdown" dropdown on-toggle="toggled(open)">
+			<a href class="dropdown-toggle" dropdown-toggle>
+				<i class="ti-timer"></i> <span translate="topbar.quicktime.MAIN">ACTIVITIES</span>
+			</a>
+			<ul class="dropdown-menu dropdown-light dropdown-messages dropdown-large">
+				<li>
+					<span class="dropdown-header" translate="topbar.quicktime.HEADER"> You have new notifications</span>
+				</li>
+				<li>
+					<div class="drop-down-wrapper ps-container">
+						<div class="list-group no-margin">
+							<a class="media list-group-item" href="">
+								<img class="img-circle" alt="..." src="modules/core/img/avatar-1.jpg">
+								<span class="media-body block no-margin"> Use awesome animate.css <small class="block text-grey">10 minutes ago</small> </span>
+							</a>
+							<a class="media list-group-item" href="">
+								<span class="media-body block no-margin"> 1.0 initial released <small class="block text-grey">1 hour ago</small> </span>
+							</a>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</li>
+			<!-- end: QUICKTIME DROPDOWN -->
+			
 			<li class="dropdown" dropdown>
+			
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" dropdown-toggle>
-					<span data-ng-bind="authentication.user.displayName"></span> <b class="caret"></b>
+					<img alt="..." src="modules/core/img/avatar-1.jpg"><span data-ng-bind="authentication.user.displayName"></span> <b class="caret"></b>
 				</a>
 				<ul class="dropdown-menu">
 					<li>
 						<a href="/#!/settings/profile">Edit Profile</a>
 					</li>
 					<li>
-						<a href="/#!/settings/accounts">Manage Social Accounts</a>
+						<a href="#">Personal Settings</a>
 					</li>
+
 					<li data-ng-show="authentication.user.provider === 'local'">
 						<a href="/#!/settings/password">Change Password</a>
+					</li>
+					<li>								
+						<a href="#">Contact Support</a>
+					</li>
+					<li class="divider"></li>
+					<li>
+						<a href="/#!/manageusers">Manage Users</a>
+					</li>
+					<li>
+						<a href="#">Account Settings</a>
 					</li>
 					<li class="divider"></li>
 					<li>
@@ -62,5 +100,6 @@
 				</ul>
 			</li>
 		</ul>
+
 	</nav>
 </div>

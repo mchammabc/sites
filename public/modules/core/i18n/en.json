@@ -8,6 +8,11 @@
       	"HEADER": "Unread messages",
       	"SEEALL": "See All"
     },
+     "quicktime": {
+    	"MAIN": "Time",
+      	"HEADER": "Unread messages",
+      	"SEEALL": "See All"
+    },
     
     "activities": {
       "MAIN": "Activities",
