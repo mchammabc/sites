@@ -30,19 +30,21 @@ console.log('in createinit');
  * Create a Project
  */
 exports.create = function(req, res) {
-	console.log('in crEATE');
-	var project = new Project(req.body);
-	project.user = req.user;
-	//project.customers = Customer.find();
-	project.save(function(err) {
-		if (err) {
-			return res.status(400).send({
-				message: errorHandler.getErrorMessage(err)
-			});
-		} else {
-			res.jsonp(project);
-		}
-	});
+	if(req.session.tenantid){			
+		var project = new Project(req.body);
+		project.user = req.user;
+		project.tenantid = req.session.tenantid;
+		//project.customers = Customer.find();
+		project.save(function(err) {
+			if (err) {
+				return res.status(400).send({
+					message: errorHandler.getErrorMessage(err)
+				});
+			} else {
+				res.jsonp(project);
+			}
+		});
+	}
 
 };
 
@@ -50,7 +52,6 @@ exports.create = function(req, res) {
  * Show the current Project
  */
 exports.read = function(req, res) {
-console.log('in read');
 	res.jsonp(req.project);
 };
 
@@ -94,7 +95,6 @@ exports.delete = function(req, res) {
  * List of Projects
  */
 exports.list = function(req, res) { 
-console.log('in list');
 	Project.find().sort('-created').populate('user', 'displayName').exec(function(err, projects) {
 		if (err) {
 			return res.status(400).send({

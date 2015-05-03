@@ -34,7 +34,6 @@ var ProjectSchema = new Schema({
 		type: Schema.ObjectId,
 		ref: 'Customer'
 	},
-	,
 	tenantid:{
 		type:Number,
 		required:true,

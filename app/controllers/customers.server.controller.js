@@ -12,25 +12,30 @@ var mongoose = require('mongoose'),
  * Create a Customer
  */
 exports.create = function(req, res) {
-	var customer = new Customer(req.body);
-	customer.user = req.user;
-
-	customer.save(function(err) {
-		if (err) {
-			return res.status(400).send({
-				message: errorHandler.getErrorMessage(err)
-			});
-		} else {
-			res.jsonp(customer);
-		}
-	});
+	if(req.session.tenantid)
+	{
+		var customer = new Customer(req.body);
+		customer.user = req.user;
+		customer.tenantid = req.session.tenantid;
+		customer.save(function(err) {
+			if (err) {
+				return res.status(400).send({
+					message: errorHandler.getErrorMessage(err)
+				});
+			} else {
+				res.jsonp(customer);
+			}
+		});
+	}
 };
 
 /**
  * Show the current Customer
  */
 exports.read = function(req, res) {
-	res.jsonp(req.customer);
+		console.log('Read customer');
+		res.jsonp(req.customer);
+
 };
 
 /**
@@ -57,7 +62,6 @@ exports.update = function(req, res) {
  */
 exports.delete = function(req, res) {
 	var customer = req.customer ;
-
 	customer.remove(function(err) {
 		if (err) {
 			return res.status(400).send({
@@ -73,12 +77,13 @@ exports.delete = function(req, res) {
  * List of Customers
  */
 exports.list = function(req, res) { 
-	Customer.find().sort('-created').populate('user', 'displayName').exec(function(err, customers) {
+	Customer.find({'tenantid':req.session.tenantid}).sort('-created').populate('user', 'displayName').exec(function(err, customers) {
 		if (err) {
 			return res.status(400).send({
 				message: errorHandler.getErrorMessage(err)
 			});
 		} else {
+			console.log('Customers',customers);
 			res.jsonp(customers);
 		}
 	});
@@ -87,12 +92,24 @@ exports.list = function(req, res) {
 /**
  * Customer middleware
  */
-exports.customerByID = function(req, res, next, id) { 
+exports.customerByID = function(req, res, next, id,router) { 
+	console.log('Find customerbyid');
 	Customer.findById(id).populate('user', 'displayName').exec(function(err, customer) {
 		if (err) return next(err);
 		if (! customer) return next(new Error('Failed to load Customer ' + id));
-		req.customer = customer ;
-		next();
+		if(customer)
+		{
+			if(customer.tenantid===req.session.tenantid){
+				console.log('Find customerbyid tenant',customer.tenantid,req.session.tenantid);
+				customer.tenantid=undefined;
+				req.customer = customer;
+				next();
+			}
+			else{
+				return res.status(404).send('Sorry, we cannot find that!');
+				
+			}
+		}
 	});
 };
 

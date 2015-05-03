@@ -178,7 +178,7 @@ angular.module('projects').controller('ngTableCtrl6', ["$scope", "$filter", "ngT
 
         total: data.length,
         getData: function ($defer, params) {
-
+        	console.log('Params',params)
             var orderedData = params.sorting() ? $filter('orderBy')(data, params.orderBy()) : data;
             $defer.resolve(orderedData.slice((params.page() - 1) * params.count(), params.page() * params.count()));
 
