@@ -14,7 +14,7 @@ var mongoose = require('mongoose'),
 exports.create = function(req, res) {
 	var task = new Task(req.body);
 	task.user = req.user;
-
+	task.tenantid = req.session.tenantid;
 	task.save(function(err) {
 		if (err) {
 			return res.status(400).send({

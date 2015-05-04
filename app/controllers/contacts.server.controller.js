@@ -14,7 +14,8 @@ var mongoose = require('mongoose'),
 exports.create = function(req, res) {
 	var contact = new Contact(req.body);
 	contact.user = req.user;
-
+	contact.tenantid = req.session.tenantid;
+	console.log('Contact Tenant is',req.session.tenantid)
 	contact.save(function(err) {
 		if (err) {
 			return res.status(400).send({

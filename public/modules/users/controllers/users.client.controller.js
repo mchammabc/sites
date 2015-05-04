@@ -1,11 +1,25 @@
 'use strict';
 
-angular.module('users').controller('UsersController', ['$scope','Users',
-	function($scope,Users) {
+angular.module('users').controller('UsersController', ['$scope','Users','$filter','ngTableParams',
+	function($scope,Users,$filter,ngTableParams) {
 		// Find a list of Projects
 		$scope.find = function() {
-			$scope.users = Users.query();
-			console.log($scope.users);
+			$scope.users = Users.query().$promise.then(function (data){
+				console.log(data)
+			    $scope.tableParams = new ngTableParams({
+			        page: 1,            // show first page
+			        count: 10        // count per pa
+			    },
+			        {
+			        	total: data.length, // length of data
+			        	counts:[],
+			            getData: function($defer, params) {
+			                var orderedData = params.sorting() ? $filter('orderBy')(data, params.orderBy()) : data;
+			                $defer.resolve(orderedData.slice((params.page() - 1) * params.count(), params.page() * params.count()));
+			            }
+			        });
+			
+		});
 		};
 	}
 ]);
