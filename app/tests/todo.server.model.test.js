@@ -6,17 +6,17 @@
 var should = require('should'),
 	mongoose = require('mongoose'),
 	User = mongoose.model('User'),
-	Task = mongoose.model('Task');
+	Todo = mongoose.model('Todo');
 
 /**
  * Globals
  */
-var user, task;
+var user, todo;
 
 /**
  * Unit tests
  */
-describe('Task Model Unit Tests:', function() {
+describe('Todo Model Unit Tests:', function() {
 	beforeEach(function(done) {
 		user = new User({
 			firstName: 'Full',
@@ -28,8 +28,8 @@ describe('Task Model Unit Tests:', function() {
 		});
 
 		user.save(function() { 
-			task = new Task({
-				name: 'Task Name',
+			todo = new Todo({
+				name: 'Todo Name',
 				user: user
 			});
 
@@ -39,16 +39,16 @@ describe('Task Model Unit Tests:', function() {
 
 	describe('Method Save', function() {
 		it('should be able to save without problems', function(done) {
-			return task.save(function(err) {
+			return todo.save(function(err) {
 				should.not.exist(err);
 				done();
 			});
 		});
 
 		it('should be able to show an error when try to save without name', function(done) { 
-			task.name = '';
+			todo.name = '';
 
-			return task.save(function(err) {
+			return todo.save(function(err) {
 				should.exist(err);
 				done();
 			});
@@ -56,7 +56,7 @@ describe('Task Model Unit Tests:', function() {
 	});
 
 	afterEach(function(done) { 
-		Task.remove().exec();
+		Todo.remove().exec();
 		User.remove().exec();
 
 		done();

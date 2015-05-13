@@ -7,13 +7,13 @@ var mongoose = require('mongoose'),
 	Schema = mongoose.Schema;
 
 /**
- * Task Schema
+ * Todo Schema
  */
-var TaskSchema = new Schema({
+var TodoSchema = new Schema({
 	name: {
 		type: String,
 		default: '',
-		required: 'Please fill Task name',
+		required: 'Please fill Todo name',
 		trim: true
 	},
 	created: {
@@ -23,12 +23,7 @@ var TaskSchema = new Schema({
 	user: {
 		type: Schema.ObjectId,
 		ref: 'User'
-	},
-	tenantid:{
-		type:Number,
-		required:true,
-		ref:'Tenant'
 	}
 });
 
-mongoose.model('Task', TaskSchema);
+mongoose.model('Todo', TodoSchema);

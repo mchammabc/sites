@@ -1,10 +1,10 @@
 'use strict';
 
 (function() {
-	// Tasks Controller Spec
-	describe('Tasks Controller Tests', function() {
+	// Todos Controller Spec
+	describe('Todos Controller Tests', function() {
 		// Initialize global variables
-		var TasksController,
+		var TodosController,
 		scope,
 		$httpBackend,
 		$stateParams,
@@ -44,69 +44,69 @@
 			$httpBackend = _$httpBackend_;
 			$location = _$location_;
 
-			// Initialize the Tasks controller.
-			TasksController = $controller('TasksController', {
+			// Initialize the Todos controller.
+			TodosController = $controller('TodosController', {
 				$scope: scope
 			});
 		}));
 
-		it('$scope.find() should create an array with at least one Task object fetched from XHR', inject(function(Tasks) {
-			// Create sample Task using the Tasks service
-			var sampleTask = new Tasks({
-				name: 'New Task'
+		it('$scope.find() should create an array with at least one Todo object fetched from XHR', inject(function(Todos) {
+			// Create sample Todo using the Todos service
+			var sampleTodo = new Todos({
+				name: 'New Todo'
 			});
 
-			// Create a sample Tasks array that includes the new Task
-			var sampleTasks = [sampleTask];
+			// Create a sample Todos array that includes the new Todo
+			var sampleTodos = [sampleTodo];
 
 			// Set GET response
-			$httpBackend.expectGET('tasks').respond(sampleTasks);
+			$httpBackend.expectGET('todos').respond(sampleTodos);
 
 			// Run controller functionality
 			scope.find();
 			$httpBackend.flush();
 
 			// Test scope value
-			expect(scope.tasks).toEqualData(sampleTasks);
+			expect(scope.todos).toEqualData(sampleTodos);
 		}));
 
-		it('$scope.findOne() should create an array with one Task object fetched from XHR using a taskId URL parameter', inject(function(Tasks) {
-			// Define a sample Task object
-			var sampleTask = new Tasks({
-				name: 'New Task'
+		it('$scope.findOne() should create an array with one Todo object fetched from XHR using a todoId URL parameter', inject(function(Todos) {
+			// Define a sample Todo object
+			var sampleTodo = new Todos({
+				name: 'New Todo'
 			});
 
 			// Set the URL parameter
-			$stateParams.taskId = '525a8422f6d0f87f0e407a33';
+			$stateParams.todoId = '525a8422f6d0f87f0e407a33';
 
 			// Set GET response
-			$httpBackend.expectGET(/tasks\/([0-9a-fA-F]{24})$/).respond(sampleTask);
+			$httpBackend.expectGET(/todos\/([0-9a-fA-F]{24})$/).respond(sampleTodo);
 
 			// Run controller functionality
 			scope.findOne();
 			$httpBackend.flush();
 
 			// Test scope value
-			expect(scope.task).toEqualData(sampleTask);
+			expect(scope.todo).toEqualData(sampleTodo);
 		}));
 
-		it('$scope.create() with valid form data should send a POST request with the form input values and then locate to new object URL', inject(function(Tasks) {
-			// Create a sample Task object
-			var sampleTaskPostData = new Tasks({
-				name: 'New Task'
+		it('$scope.create() with valid form data should send a POST request with the form input values and then locate to new object URL', inject(function(Todos) {
+			// Create a sample Todo object
+			var sampleTodoPostData = new Todos({
+				name: 'New Todo'
 			});
 
-			// Create a sample Task response
-			var sampleTaskResponse = new Tasks({
+			// Create a sample Todo response
+			var sampleTodoResponse = new Todos({
 				_id: '525cf20451979dea2c000001',
-				name: 'New Task'
+				name: 'New Todo'
 			});
 
 			// Fixture mock form input values
-			scope.name = 'New Task';
+			scope.name = 'New Todo';
 
 			// Set POST response
-			$httpBackend.expectPOST('tasks', sampleTaskPostData).respond(sampleTaskResponse);
+			$httpBackend.expectPOST('todos', sampleTodoPostData).respond(sampleTodoResponse);
 
 			// Run controller functionality
 			scope.create();
@@ -115,49 +115,49 @@
 			// Test form inputs are reset
 			expect(scope.name).toEqual('');
 
-			// Test URL redirection after the Task was created
-			expect($location.path()).toBe('/tasks/' + sampleTaskResponse._id);
+			// Test URL redirection after the Todo was created
+			expect($location.path()).toBe('/todos/' + sampleTodoResponse._id);
 		}));
 
-		it('$scope.update() should update a valid Task', inject(function(Tasks) {
-			// Define a sample Task put data
-			var sampleTaskPutData = new Tasks({
+		it('$scope.update() should update a valid Todo', inject(function(Todos) {
+			// Define a sample Todo put data
+			var sampleTodoPutData = new Todos({
 				_id: '525cf20451979dea2c000001',
-				name: 'New Task'
+				name: 'New Todo'
 			});
 
-			// Mock Task in scope
-			scope.task = sampleTaskPutData;
+			// Mock Todo in scope
+			scope.todo = sampleTodoPutData;
 
 			// Set PUT response
-			$httpBackend.expectPUT(/tasks\/([0-9a-fA-F]{24})$/).respond();
+			$httpBackend.expectPUT(/todos\/([0-9a-fA-F]{24})$/).respond();
 
 			// Run controller functionality
 			scope.update();
 			$httpBackend.flush();
 
 			// Test URL location to new object
-			expect($location.path()).toBe('/tasks/' + sampleTaskPutData._id);
+			expect($location.path()).toBe('/todos/' + sampleTodoPutData._id);
 		}));
 
-		it('$scope.remove() should send a DELETE request with a valid taskId and remove the Task from the scope', inject(function(Tasks) {
-			// Create new Task object
-			var sampleTask = new Tasks({
+		it('$scope.remove() should send a DELETE request with a valid todoId and remove the Todo from the scope', inject(function(Todos) {
+			// Create new Todo object
+			var sampleTodo = new Todos({
 				_id: '525a8422f6d0f87f0e407a33'
 			});
 
-			// Create new Tasks array and include the Task
-			scope.tasks = [sampleTask];
+			// Create new Todos array and include the Todo
+			scope.todos = [sampleTodo];
 
 			// Set expected DELETE response
-			$httpBackend.expectDELETE(/tasks\/([0-9a-fA-F]{24})$/).respond(204);
+			$httpBackend.expectDELETE(/todos\/([0-9a-fA-F]{24})$/).respond(204);
 
 			// Run controller functionality
-			scope.remove(sampleTask);
+			scope.remove(sampleTodo);
 			$httpBackend.flush();
 
 			// Test array after successful delete
-			expect(scope.tasks.length).toBe(0);
+			expect(scope.todos.length).toBe(0);
 		}));
 	});
 }());

@@ -5,102 +5,102 @@
  */
 var mongoose = require('mongoose'),
 	errorHandler = require('./errors.server.controller'),
-	Task = mongoose.model('Task'),
+	Todo = mongoose.model('Todo'),
 	_ = require('lodash');
 
 /**
- * Create a Task
+ * Create a Todo
  */
 exports.create = function(req, res) {
-	var task = new Task(req.body);
-	task.user = req.user;
-	task.tenantid = req.session.tenantid;
-	task.save(function(err) {
+	var todo = new Todo(req.body);
+	todo.user = req.user;
+
+	todo.save(function(err) {
 		if (err) {
 			return res.status(400).send({
 				message: errorHandler.getErrorMessage(err)
 			});
 		} else {
-			res.jsonp(task);
+			res.jsonp(todo);
 		}
 	});
 };
 
 /**
- * Show the current Task
+ * Show the current Todo
  */
 exports.read = function(req, res) {
-	res.jsonp(req.task);
+	res.jsonp(req.todo);
 };
 
 /**
- * Update a Task
+ * Update a Todo
  */
 exports.update = function(req, res) {
-	var task = req.task ;
+	var todo = req.todo ;
 
-	task = _.extend(task , req.body);
+	todo = _.extend(todo , req.body);
 
-	task.save(function(err) {
+	todo.save(function(err) {
 		if (err) {
 			return res.status(400).send({
 				message: errorHandler.getErrorMessage(err)
 			});
 		} else {
-			res.jsonp(task);
+			res.jsonp(todo);
 		}
 	});
 };
 
 /**
- * Delete an Task
+ * Delete an Todo
  */
 exports.delete = function(req, res) {
-	var task = req.task ;
+	var todo = req.todo ;
 
-	task.remove(function(err) {
+	todo.remove(function(err) {
 		if (err) {
 			return res.status(400).send({
 				message: errorHandler.getErrorMessage(err)
 			});
 		} else {
-			res.jsonp(task);
+			res.jsonp(todo);
 		}
 	});
 };
 
 /**
- * List of Tasks
+ * List of Todos
  */
 exports.list = function(req, res) { 
-	Task.find().sort('-created').populate('user', 'displayName').exec(function(err, tasks) {
+	Todo.find().sort('-created').populate('user', 'displayName').exec(function(err, todos) {
 		if (err) {
 			return res.status(400).send({
 				message: errorHandler.getErrorMessage(err)
 			});
 		} else {
-			res.jsonp(tasks);
+			res.jsonp(todos);
 		}
 	});
 };
 
 /**
- * Task middleware
+ * Todo middleware
  */
-exports.taskByID = function(req, res, next, id) { 
-	Task.findById(id).populate('user', 'displayName').exec(function(err, task) {
+exports.todoByID = function(req, res, next, id) { 
+	Todo.findById(id).populate('user', 'displayName').exec(function(err, todo) {
 		if (err) return next(err);
-		if (! task) return next(new Error('Failed to load Task ' + id));
-		req.task = task ;
+		if (! todo) return next(new Error('Failed to load Todo ' + id));
+		req.todo = todo ;
 		next();
 	});
 };
 
 /**
- * Task authorization middleware
+ * Todo authorization middleware
  */
 exports.hasAuthorization = function(req, res, next) {
-	if (req.task.user.id !== req.user.id) {
+	if (req.todo.user.id !== req.user.id) {
 		return res.status(403).send('User is not authorized');
 	}
 	next();
