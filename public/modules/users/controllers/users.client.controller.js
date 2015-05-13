@@ -3,6 +3,28 @@
 angular.module('users').controller('UsersController', ['$scope','Users','$filter','ngTableParams',
 	function($scope,Users,$filter,ngTableParams) {
 		// Find a list of Projects
+	
+		$scope.create = function() {
+			// Create new Customer object
+			var user = new User ({
+				firstName: this.firstName,
+				lastName: this.lastName,
+				username: this.username,
+				password: this.password,
+				role: this.role,
+				email: this.email
+			});
+	
+			// Redirect after save
+			user.$save(function(response) {
+				$location.path('user/' + response._id);
+	
+				// Clear form fields
+				$scope.name = '';
+			}, function(errorResponse) {
+				$scope.error = errorResponse.data.message;
+			});
+		};
 		$scope.find = function() {
 			$scope.users = Users.query().$promise.then(function (data){
 				console.log(data)
@@ -20,6 +42,11 @@ angular.module('users').controller('UsersController', ['$scope','Users','$filter
 			        });
 			
 		});
+		};
+		$scope.createInit = function() {
+			//var customers = Projects.createInit();
+			//$scope.customers = customers;
+			$scope.roles = [{'role':'Administrator'},{'role':'Project Manager'},{'role':'Resource'}];
 		};
 	}
 ]);

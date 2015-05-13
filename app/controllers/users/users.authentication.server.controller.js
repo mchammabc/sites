@@ -34,6 +34,7 @@ exports.signup = function(req, res) {
 			// Add missing user fields
 			user.provider = 'local';
 			user.displayName = user.firstName + ' ' + user.lastName;
+			user.role = 'Administrator';
 			user.tenantid = tenantdoc.id;
 			// Then save the user 
 			user.save(function(err,userdoc) {

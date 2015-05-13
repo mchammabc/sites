@@ -10,7 +10,7 @@ angular.module('core').controller('SidebarController', ['$scope', 'Authenticatio
 		$scope.toggleCollapsibleMenu = function() {
 			$scope.isCollapsed = $scope.isCollapsed;
 		};
-
+		$scope.roleroutes = {"Customer":{"Administrator":true,"Project Manager":true,"Resource":false}}
 		// Collapsing the menu after navigation
 		$scope.$on('$stateChangeSuccess', function() {
 			$scope.isCollapsed = true;

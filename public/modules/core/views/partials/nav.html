@@ -43,8 +43,8 @@
 			</div>
 		</a>
 		<ul class="sub-menu">
-			<li ui-sref-active="active">
-				<a ui-sref="app.ui.elements">
+			<li ui-sref-active="active" ng-show="roleroutes['Customer'][authentication.user.role[0]]==true">
+				<a href="#">
 					<span class="title" translate="sidebar.nav.relationships.CUSTOMERS.MAIN"> Customers </span><i class="icon-arrow"></i>
 				</a>
 				<ul class="sub-menu">
@@ -61,7 +61,7 @@
 				</ul>
 			</li>
 			<li ui-sref-active="active">
-				<a ui-sref="app.ui.elements">
+				<a href="#">
 					<span class="title" translate="sidebar.nav.relationships.CONTACTS.MAIN"> Contacts </span><i class="icon-arrow"></i>
 				</a>
 				<ul class="sub-menu">
@@ -134,7 +134,7 @@
 				</ul>
 			</li>
 			<li ui-sref-active="active">
-				<a ui-sref="app.ui.elements">
+				<a href="#">
 					<span class="title" translate="sidebar.nav.time.APPROVALS"> Approve Time </span>
 				</a>
 			</li>
@@ -153,7 +153,7 @@
 		</a>
 		<ul class="sub-menu">
 			<li ui-sref-active="active">
-				<a ui-sref="app.ui.elements">
+				<a ui-sref="createTask">
 					<span class="title" translate="sidebar.nav.tasks.NEW"> New Task </span>
 				</a>
 			</li>

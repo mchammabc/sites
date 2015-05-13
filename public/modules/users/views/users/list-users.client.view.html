@@ -5,7 +5,9 @@
             <div class="row">
                 <div class="col-md-5">
                  <div class="form-group">
+                 <a ui-sref="createUser">
                    <input type="submit" class="btn btn-primary" value="New User">
+                   </a>
                </div>
                </div>
         </div>
@@ -18,8 +20,8 @@
 					            <td data-title="'Email'" sortable="'email'">
 					                {{user.email}}
 					            </td>
-					           <td data-title="'Roles'" sortable="'role'">
-					                {{user.roles[0]}}
+					           <td data-title="'Role'" sortable="'role'">
+					                {{user.role[0]}}
 					            </td>
 					            
 					             <td >

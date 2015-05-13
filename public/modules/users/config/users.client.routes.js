@@ -7,7 +7,11 @@ angular.module('users').config(['$stateProvider',
 		$stateProvider.
 		state('users', {
 			url: '/manageusers',
-			templateUrl: 'modules/users/views/users/users.client.view.html'
+			templateUrl: 'modules/users/views/users/list-users.client.view.html'
+		}).
+		state('createUser', {
+			url: '/create/user',
+			templateUrl: 'modules/users/views/users/create-user.client.view.html'
 		}).
 		state('profile', {
 			url: '/settings/profile',
