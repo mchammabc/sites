@@ -71,7 +71,7 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 		$scope.createInit = function() {
 			var customers = Projects.createInit();
 			$scope.customers = customers;
-			$scope.projectstatus = ['In Progress','Not Started','Completed','On Hold'];
+			$scope.projectstatus = [{'status':'In Progress'},{'status':'Not Started'},{'status':'Completed'},{'status':'On Hold'}];
 		};
 	}
 ]);

@@ -47,10 +47,10 @@
 				</label>
 				<ui-select ng-model="projectstatus" theme="bootstrap">
 					<ui-select-match placeholder="Select in the list...">
-						{{$select.selected}}
+						{{$select.selected.status}}
 					</ui-select-match>
 					<ui-select-choices group-by="'group'" repeat="status in projectstatus | filter: $select.search">
-						<span ng-bind-html="status | highlight: $select.search"></span>
+						<span ng-bind-html="status.status | highlight: $select.search"></span>
 					</ui-select-choices>
 				</ui-select>
 				</div>

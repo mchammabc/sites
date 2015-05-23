@@ -3,7 +3,6 @@
 angular.module('core').controller('SidebarController', ['$scope', 'Authentication', 'Menus',
 	function($scope, Authentication, Menus) {
 		$scope.authentication = Authentication;
-		console.log('Test',Authentication)
 		$scope.isCollapsed = true;
 		$scope.menu = Menus.getMenu('topbar');
 

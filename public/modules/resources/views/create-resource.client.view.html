@@ -1,56 +1,61 @@
-<section data-ng-controller="UsersController" data-ng-init="createInit()">
+<section data-ng-controller="ResourcesController">
     <div class="page-header">
-        <h1>New User</h1>
+        <h1>New Resource</h1>
     </div>
     <div class="col-md-12">
-        <form class="form-horizontal" data-ng-submit="create()" novalidate>
-
-            <div class="row">
+        <form class="form-horizontal" name="resourceform" data-ng-submit="create()" novalidate>
+	        <div class="row">
+               <div class="col-md-5">
+	               <div class="form-group">
+	                   <input type="submit" class="btn btn-primary">
+	               </div>
+               </div>
+	        </div>
             <fieldset>
-            	<legend>Primary Details</legend>
+            <legend>Primary Details</legend>
                 <div class="form-group">
                     <label class="control-label" for="firstname">First Name</label>
                     <div class="controls">
-                        <input type="text" data-ng-model="firstname" id="firstname" class="form-control" placeholder="First Name" required>
+                        <input type="text" data-ng-model="formData.firstname" id="firstname" class="form-control" placeholder="First Name" required>
                     </div>
                 </div>
-                <div class="form-group">
+                 <div class="form-group">
                     <label class="control-label" for="lastname">Last Name</label>
                     <div class="controls">
-                        <input type="text" data-ng-model="lastname" id="lastname" class="form-control" placeholder="Last Name" required>
+                        <input type="text" data-ng-model="formData.lastname" id="lastname" class="form-control" placeholder="Last Name">
                     </div>
                 </div>
                  <div class="form-group">
                     <label class="control-label" for="name">Email</label>
                     <div class="controls">
-                        <input type="text" data-ng-model="email" id="email" class="form-control" placeholder="Email" required>
+                        <input type="text" data-ng-model="formData.email" id="email" class="form-control" placeholder="Email" required>
                     </div>
                 </div>
                <div class="form-group">
                     <label class="control-label" for="name">Comments</label>
                     <div class="controls">
-                        <textarea type="text" data-ng-model="comments" id="comments" class="form-control" placeholder="Enter Comments..." required></textarea>
+                        <textarea type="text" data-ng-model="formData.comments" id="comments" class="form-control" placeholder="Enter Comments..." required></textarea>
                     </div>
                 </div>
-                </fieldset>
-                <fieldset>
+                  </fieldset>
+                <fieldset data-ng-show="authentication.user.role[0]=='Resource'">
                 <legend>Login Details</legend>
                  <div class="form-group">
                     <label class="control-label" for="username">Username</label>
                     <div class="controls">
-                        <input type="text" data-ng-model="username" id="username" class="form-control" placeholder="Username" required>
+                        <input type="text" data-ng-model="formData.username" id="username" class="form-control" placeholder="Username" required>
                     </div>
                 </div>
-                 <div class="form-group">
+                 <div class="form-group" ng-class="{'ng-invalid-required':formData.password!=formData.reenterpassword}">
                     <label class="control-label" for="password">Password</label>
                     <div class="controls">
-                        <input type="text" data-ng-model="password" id="password" class="form-control" placeholder="Password" required>
+                        <input type="text" name="password" data-ng-model="formData.password" id="password" class="form-control" placeholder="Password" required>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label" for="password">Re-enter Password</label>
+                    <label class="control-label" for="reenterpassword">Re-enter Password</label>
                     <div class="controls">
-                        <input type="text" data-ng-model="reenterpassword" id="reenterpassword" class="form-control" placeholder="Re-enter Password" required>
+                        <input type="text" data-ng-change="validatePassword()" data-ng-model="formData.reenterpassword" id="reenterpassword" class="form-control" placeholder="Re-enter Password" required>
                     </div>
                 </div>
                 <div class="form-group">
@@ -66,9 +71,6 @@
 					</ui-select-choices>
 				</ui-select>
 				</div>
-				<div data-ng-show="error" class="text-danger">
-					<strong data-ng-bind="error"></strong>
-				</div>
 				<div class="form-group">
 									<div class="checkbox">
 									<label class="control-label">Login Access</label>
@@ -78,6 +80,7 @@
 				<div data-ng-show="error" class="text-danger">
 					<strong data-ng-bind="error"></strong>
 				</div>
+          
             </fieldset>
         </form>
     </div>

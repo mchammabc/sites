@@ -77,6 +77,23 @@
 					</li>
 				</ul>
 			</li>
+			<li ui-sref-active="active">
+				<a href="#">
+					<span class="title" translate="sidebar.nav.relationships.RESOURCES.MAIN"> Resources </span><i class="icon-arrow"></i>
+				</a>
+				<ul class="sub-menu">
+					<li>
+						<a ui-sref="createResource" translate="sidebar.nav.relationships.RESOURCES.NEW">
+							New Resource
+						</a>
+					</li>
+					<li>
+						<a ui-sref="listResources" translate="sidebar.nav.relationships.RESOURCES.LIST">
+							List Resources
+						</a>
+					</li>
+				</ul>
+			</li>
 
 		</ul>
 	</li>
@@ -147,19 +164,19 @@
 					<i class="ti-check-box"></i>
 				</div>
 				<div class="item-inner">
-					<span class="title" translate="sidebar.nav.tasks.MAIN"> Tasks </span> <i class="icon-arrow"></i>
+					<span class="title" translate="sidebar.nav.todos.MAIN"> To Dos </span> <i class="icon-arrow"></i>
 				</div>
 			</div>
 		</a>
 		<ul class="sub-menu">
 			<li ui-sref-active="active">
-				<a ui-sref="createTask">
-					<span class="title" translate="sidebar.nav.tasks.NEW"> New Task </span>
+				<a ui-sref="createTodo">
+					<span class="title" translate="sidebar.nav.todos.NEW"> New To Do </span>
 				</a>
 			</li>
 			<li ui-sref-active="active">
 				<a ui-sref="app.ui.elements">
-					<span class="title" translate="sidebar.nav.tasks.LIST"> List Tasks </span>
+					<span class="title" translate="sidebar.nav.todos.LIST"> List To Dos </span>
 				</a>
 			</li>
 		</ul>

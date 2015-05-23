@@ -13,7 +13,11 @@
       	"HEADER": "Unread messages",
       	"SEEALL": "See All"
     },
-    
+    "quicktodo": {
+    	"MAIN": "To Do",
+      	"HEADER": "Enter To Do",
+      	"SEEALL": "See All"
+    },
     "activities": {
       "MAIN": "Activities",
       "HEADER": "You have new notifications",
@@ -73,6 +77,12 @@
         	"NEW" : "New Contact",
         	"LIST" : "List Contacts"
         }
+        ,
+        "RESOURCES": {
+        	"MAIN": "Resources",
+        	"NEW" : "New Resource",
+        	"LIST" : "List Resources"
+        }
       },
       "projects": {
       	"MAIN": "Projects",
@@ -88,10 +98,10 @@
         },
       	"APPROVALS":"Approve Time"
       },
-      "tasks": {
-      	"MAIN": "Tasks",
-      	"NEW" : "New Task",
-        "LIST" : "List Tasks"
+      "todos": {
+      	"MAIN": "To Dos",
+      	"NEW" : "New To Do",
+        "LIST" : "List To Dos"
       },
 	 "reports": {
       	"MAIN": "Reports",

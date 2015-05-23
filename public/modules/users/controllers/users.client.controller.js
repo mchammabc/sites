@@ -3,18 +3,18 @@
 angular.module('users').controller('UsersController', ['$scope','Users','$filter','ngTableParams',
 	function($scope,Users,$filter,ngTableParams) {
 		// Find a list of Projects
-	
+		
 		$scope.create = function() {
 			// Create new Customer object
-			var user = new User ({
-				firstName: this.firstName,
-				lastName: this.lastName,
+			var user = new Users ({
+				firstName: this.firstname,
+				lastName: this.lastname,
 				username: this.username,
 				password: this.password,
 				role: this.role,
 				email: this.email
 			});
-	
+			console.log('In user create client controller')
 			// Redirect after save
 			user.$save(function(response) {
 				$location.path('user/' + response._id);
@@ -47,6 +47,12 @@ angular.module('users').controller('UsersController', ['$scope','Users','$filter
 			//var customers = Projects.createInit();
 			//$scope.customers = customers;
 			$scope.roles = [{'role':'Administrator'},{'role':'Project Manager'},{'role':'Resource'}];
+		};
+		// Find existing Contact
+		$scope.findOne = function() {
+			$scope.user = Contacts.get({ 
+				userId: $stateParams.userId
+			});
 		};
 	}
 ]);
