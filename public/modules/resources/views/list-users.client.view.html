@@ -1,0 +1,44 @@
+<section data-ng-controller="ResourcesController" data-ng-init="findUsers()">
+    <div class="page-header">
+        <h1>Users</h1>
+    </div>
+    <div class="list-group">
+        <a data-ng-repeat="resource in resources" data-ng-href="#!/manageusers/{{resource._id}}" class="list-group-item">
+			<small class="list-group-item-text">
+				Posted on
+				<span data-ng-bind="resource.created | date:'medium'"></span>
+				by
+				<span data-ng-bind="resource.user.displayName"></span>
+			</small>
+			<h4 class="list-group-item-heading" data-ng-bind="resource.firstName"></h4>
+        </a>
+    </div>
+    <div class="list-group" ng-controller="UsersController">
+				        <table ng-table="tableParams" class="table">				        
+				          	 <tr ng-repeat="user in $data">
+					            <td data-title="'Name'" sortable="'name'">
+					                {{user.displayName}}
+					            </td>
+					            <td data-title="'Email'" sortable="'email'">
+					                {{user.email}}
+					            </td>
+					           <td data-title="'Role'" sortable="'role'">
+					                {{user.role[0]}}
+					            </td>
+					           <td data-title="'Role'" sortable="'role'">
+					                {{user.role[0]}}
+					            </td>
+					             <td >
+					             <div class="pull-right margin-right-10">
+										<input type=button class="btn btn-primary btn-o btn-sm" ng-click="navigate('/manageusers/{{user._id}}')" id="viewRowBtn" value="view">
+									</div>
+									<div class="pull-right margin-right-10">
+										<input type=button class="btn btn-primary btn-o btn-sm" ng-click="navigate('/manageusers/{{user._id}}/edit')"  id="editRowBtn" value="edit">
+									</div></td>
+					            </tr>
+
+				            </table>
+    <div class="alert alert-warning text-center" data-ng-hide="!resources.$resolved || resources.length">
+    	No Resources yet, why don't you <a href="/#!/resources/create">create one</a>?
+    </div>
+</section>

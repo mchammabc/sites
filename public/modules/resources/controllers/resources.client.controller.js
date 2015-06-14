@@ -1,8 +1,8 @@
 'use strict';
 
 // Resources controller
-angular.module('resources').controller('ResourcesController', ['$scope', '$stateParams', '$location', 'Authentication', 'Resources',
-	function($scope, $stateParams, $location, Authentication, Resources) {
+angular.module('resources').controller('ResourcesController', ['$scope', '$stateParams', '$location', 'Authentication', 'Resources','$filter','ngTableParams',
+	function($scope, $stateParams, $location, Authentication, Resources,$filter,ngTableParams) {
 		$scope.authentication = Authentication;
 		$scope.formData = {"firstName":'',"password":'',"reenterpassword":''};
 		console.log('Form Data Test',$scope.formData);
@@ -12,14 +12,22 @@ angular.module('resources').controller('ResourcesController', ['$scope', '$state
 		$scope.create = function() {
 			// Create new Resource object
 			var resource = new Resources ({
-				firstName: this.firstname,
-				lastName: this.lastname,
-				email: this.email,
-				comments: this.comments
+				firstName: this.formData.firstname,
+				lastName: this.formData.lastname,
+				email: this.formData.email,
+				comments: this.formData.comments,
+				jobtitle: this.formData.jobtitle,
+				isactive: this.formData.isactive,
+				username: this.formData.username,
+				loginaccess: this.formData.loginaccess,
+				password: this.formData.password,
+				role: this.formData.role.role
+				
 			});
 
 			// Redirect after save
 			resource.$save(function(response) {
+				
 				$location.path('resources/' + response._id);
 
 				// Clear form fields
@@ -52,7 +60,7 @@ angular.module('resources').controller('ResourcesController', ['$scope', '$state
 				console.log('validatePassword has triggered','is valid');
 			}
 			else{
-				$scope.formData.reenterpassword.$setValidity('required',false)
+				$scope.resourceform.reenterpassword.$setValidity('required',false)
 				console.log('else check',$scope.formData.password,$scope.formData.reenterpassword,$scope.formData,$scope);
 			}
 		};
@@ -72,12 +80,40 @@ angular.module('resources').controller('ResourcesController', ['$scope', '$state
 		$scope.find = function() {
 			$scope.resources = Resources.query();
 		};
-
+		// Find a list of Resources
+		$scope.findUsers = function() {
+			console.log('IN findusers')
+			$scope.resources = Resources.findUsers().$promise.then(function (data){
+				console.log(data)
+			    $scope.tableParams = new ngTableParams({
+			        page: 1,            // show first page
+			        count: 10        // count per pa
+			    },
+			        {
+			        	total: data.length, // length of data
+			        	counts:[],
+			            getData: function($defer, params) {
+			                var orderedData = params.sorting() ? $filter('orderBy')(data, params.orderBy()) : data;
+			                $defer.resolve(orderedData.slice((params.page() - 1) * params.count(), params.page() * params.count()));
+			            }
+			        });
+			
+			});
+		};
 		// Find existing Resource
 		$scope.findOne = function() {
 			$scope.resource = Resources.get({ 
 				resourceId: $stateParams.resourceId
 			});
+		};
+		// Find existing User
+		$scope.findOneUser = function() {
+			$scope.resource = Resources.findOneUser({userId: $stateParams.userId});
+		};
+		// Find existing Resource
+		$scope.navigate = function(path) {
+			console.log("Navigate?",path)
+			$location.path(path);
 		};
 	}
 ]);

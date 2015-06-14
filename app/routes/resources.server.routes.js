@@ -4,6 +4,16 @@ module.exports = function(app) {
 	var users = require('../../app/controllers/users.server.controller');
 	var resources = require('../../app/controllers/resources.server.controller');
 
+	
+	// Resources Routes
+	app.route('/manageusers/list')
+	 	.get(resources.userlist);
+	
+	// Resources Routes
+	app.route('/manageusers/:userId')
+	 	.get(resources.read);
+	 	
+	 	
 	// Resources Routes
 	app.route('/resources')
 		.get(resources.list)
@@ -16,4 +26,7 @@ module.exports = function(app) {
 
 	// Finish by binding the Resource middleware
 	app.param('resourceId', resources.resourceByID);
+	
+	// Finish by binding the Resource middleware
+	app.param('userId', resources.userByID);
 };

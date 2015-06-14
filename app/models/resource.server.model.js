@@ -19,13 +19,23 @@ var ResourceSchema = new Schema({
 	lastName: {
 		type: String,
 		default: '',
+		required: 'Please fill Resource Last Name',
 		trim: true
 	},
 	email: {
 		type: String,
 		trim: true,
+		required: 'Please fill Resource Email',
 		default: '',
 		match: [/.+\@.+\..+/, 'Please fill a valid email address']
+	},
+	jobtitle: {
+		type: String,
+		default: '',
+		trim: true
+	},
+	isactive: {
+		type: Boolean, default: true 
 	},
 	comments: {
 		type: String,
@@ -39,6 +49,11 @@ var ResourceSchema = new Schema({
 	user: {
 		type: Schema.ObjectId,
 		ref: 'User'
+	},
+	tenantid:{
+		type:Number,
+		required:true,
+		ref:'Tenant'
 	}
 });
 
