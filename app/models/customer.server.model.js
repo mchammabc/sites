@@ -16,7 +16,7 @@ var CustomerSchema = new Schema({
 		required: 'Please fill Customer name',
 		trim: true
 	},
-		email: {
+	email: {
 		type: String,
 		default: '',
 		required: 'Please fill email',
